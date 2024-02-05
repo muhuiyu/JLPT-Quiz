@@ -8,7 +8,7 @@
 import Foundation
 
 protocol QuizService {
-    func generateSession(filter: QuizFilter?) -> Session
+    func generateSession(filter: QuizFilter?) throws -> Session
 }
 
 enum QuizServiceError: Error {

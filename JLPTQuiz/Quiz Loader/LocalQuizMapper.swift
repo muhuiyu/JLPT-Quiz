@@ -58,7 +58,7 @@ final class LocalQuizMapper {
             
             enum CodingKeys: String, CodingKey {
                 case value
-                case linkedEntryID = "linkedEntryId"
+                case linkedEntryID = "linkedEntry"
                 case isAnswer
             }
             

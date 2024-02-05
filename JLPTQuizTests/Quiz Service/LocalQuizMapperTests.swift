@@ -85,7 +85,7 @@ extension LocalQuizMapperTests {
     private func makeOptionJSON(_ option: OptionEntry) -> [String: Any] {
         return [
             "value": option.value,
-            "linkedEntryId": option.linkedEntryID,
+            "linkedEntry": option.linkedEntryID,
             "isAnswer": option.isAnswer
         ]
     }

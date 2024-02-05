@@ -1,0 +1,56 @@
+[
+    {
+        "id": "id-1",
+        "options": [
+            {
+                "value": "question-1/option-1",
+                "isAnswer": true,
+                "linkedEntry": "linkedEntry-1"
+            }
+        ],
+        "level": "n1",
+        "question": "question-1",
+        "type": "grammar"
+    },
+    {
+        "id": "id-2",
+        "options": [
+            {
+                "value": "question-2/option-1",
+                "isAnswer": true,
+                "linkedEntry": "linkedEntry-2"
+            },
+            {
+                "value": "question-2/option-2",
+                "isAnswer": false,
+                "linkedEntry": "linkedEntry-3"
+            }
+        ],
+        "level": "n3",
+        "question": "question-2",
+        "type": "kanji"
+    },
+    {
+        "id": "id-3",
+        "options": [
+            {
+                "value": "question-3/option-1",
+                "isAnswer": true,
+                "linkedEntry": "linkedEntry-4"
+            },
+            {
+                "value": "question-3/option-2",
+                "isAnswer": false,
+                "linkedEntry": "linkedEntry-5"
+            },
+            {
+                "value": "question-3/option-3",
+                "isAnswer": true,
+                "linkedEntry": "linkedEntry-6"
+            }
+        ],
+        "level": "n5",
+        "question": "question-3",
+        "type": "vocab"
+    }
+]
