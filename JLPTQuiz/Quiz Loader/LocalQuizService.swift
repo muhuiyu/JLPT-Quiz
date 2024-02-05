@@ -15,7 +15,6 @@ final class LocalQuizService: QuizService {
     }
     
     func generateSession(filter: QuizFilter? = nil) throws -> Session {
-        // TODO: fetch user stats and apply filters
         guard let url = Bundle(for: type(of: self)).url(forResource: jsonFileName, withExtension: "json") else {
             throw QuizServiceError.missingFile
         }
@@ -27,6 +26,18 @@ final class LocalQuizService: QuizService {
             throw QuizServiceError.invalidData
         }
         
-        return Session(quizList: items)
+        // TODO: fetch user stats
+        
+        let filteredQuizzes = filterQuizzes(items, with: filter)
+        
+        return Session(quizList: filteredQuizzes)
+    }
+    
+    private func filterQuizzes(_ quizzes: [Quiz], with filter: QuizFilter?) -> [Quiz] {
+        guard let filter else { return quizzes }
+        
+        return quizzes.filter {
+            $0.type == filter.type && $0.level == filter.level
+        }
     }
 }

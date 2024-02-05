@@ -23,6 +23,18 @@ final class LocalQuizServiceIntegrationTests: XCTestCase {
             XCTFail("Expected to load quizzes successfully, received \(error) instead")
         }
     }
+    
+    func test_generateSession_deliversFilteredItems() {
+        let sut = makeSUT()
+        
+        do {
+            let session = try sut.generateSession(filter: QuizFilter(level: .n1, type: .grammar))
+            XCTAssertEqual(session.quizList.count, 1)
+            XCTAssertEqual(session.quizList[0], expectedItem(at: 0))
+        } catch {
+            XCTFail("Expected to load filtered quizzes, received \(error) instead")
+        }
+    }
 }
 
 extension LocalQuizServiceIntegrationTests {
