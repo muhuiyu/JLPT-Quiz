@@ -10,6 +10,10 @@
 		E406D50F2B70615A00DD9AD6 /* JLPTQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E406D5062B70615A00DD9AD6 /* JLPTQuiz.framework */; };
 		E406D5142B70615A00DD9AD6 /* JLPTQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D5132B70615A00DD9AD6 /* JLPTQuizTests.swift */; };
 		E406D5152B70615A00DD9AD6 /* JLPTQuiz.h in Headers */ = {isa = PBXBuildFile; fileRef = E406D5092B70615A00DD9AD6 /* JLPTQuiz.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E406D5212B70663600DD9AD6 /* quizzes.json in Resources */ = {isa = PBXBuildFile; fileRef = E406D5202B70663600DD9AD6 /* quizzes.json */; };
+		E406D5252B70665700DD9AD6 /* grammars.json in Resources */ = {isa = PBXBuildFile; fileRef = E406D5222B70665700DD9AD6 /* grammars.json */; };
+		E406D5262B70665700DD9AD6 /* kanjis.json in Resources */ = {isa = PBXBuildFile; fileRef = E406D5232B70665700DD9AD6 /* kanjis.json */; };
+		E406D5272B70665700DD9AD6 /* vocabs.json in Resources */ = {isa = PBXBuildFile; fileRef = E406D5242B70665700DD9AD6 /* vocabs.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +31,10 @@
 		E406D5092B70615A00DD9AD6 /* JLPTQuiz.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLPTQuiz.h; sourceTree = "<group>"; };
 		E406D50E2B70615A00DD9AD6 /* JLPTQuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLPTQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E406D5132B70615A00DD9AD6 /* JLPTQuizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLPTQuizTests.swift; sourceTree = "<group>"; };
+		E406D5202B70663600DD9AD6 /* quizzes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quizzes.json; sourceTree = "<group>"; };
+		E406D5222B70665700DD9AD6 /* grammars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = grammars.json; sourceTree = "<group>"; };
+		E406D5232B70665700DD9AD6 /* kanjis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = kanjis.json; sourceTree = "<group>"; };
+		E406D5242B70665700DD9AD6 /* vocabs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vocabs.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +77,7 @@
 		E406D5082B70615A00DD9AD6 /* JLPTQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				E406D51E2B70662500DD9AD6 /* Quiz Feature */,
 				E406D5092B70615A00DD9AD6 /* JLPTQuiz.h */,
 			);
 			path = JLPTQuiz;
@@ -80,6 +89,25 @@
 				E406D5132B70615A00DD9AD6 /* JLPTQuizTests.swift */,
 			);
 			path = JLPTQuizTests;
+			sourceTree = "<group>";
+		};
+		E406D51E2B70662500DD9AD6 /* Quiz Feature */ = {
+			isa = PBXGroup;
+			children = (
+				E406D51F2B70662E00DD9AD6 /* Data */,
+			);
+			path = "Quiz Feature";
+			sourceTree = "<group>";
+		};
+		E406D51F2B70662E00DD9AD6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E406D5202B70663600DD9AD6 /* quizzes.json */,
+				E406D5222B70665700DD9AD6 /* grammars.json */,
+				E406D5232B70665700DD9AD6 /* kanjis.json */,
+				E406D5242B70665700DD9AD6 /* vocabs.json */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +202,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E406D5212B70663600DD9AD6 /* quizzes.json in Resources */,
+				E406D5272B70665700DD9AD6 /* vocabs.json in Resources */,
+				E406D5252B70665700DD9AD6 /* grammars.json in Resources */,
+				E406D5262B70665700DD9AD6 /* kanjis.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
