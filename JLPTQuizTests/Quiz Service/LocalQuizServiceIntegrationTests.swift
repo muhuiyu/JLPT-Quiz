@@ -40,6 +40,7 @@ final class LocalQuizServiceIntegrationTests: XCTestCase {
 extension LocalQuizServiceIntegrationTests {
     private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> LocalQuizService {
         let sut = LocalQuizService(jsonFileName: "localQuizServiceIntegrationTests-quizzes")
+        trackForMemoryLeaks(sut)
         return sut
     }
     

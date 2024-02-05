@@ -21,6 +21,7 @@
 		E406D5372B7091F600DD9AD6 /* LocalQuizServiceIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D5362B7091F600DD9AD6 /* LocalQuizServiceIntegrationTests.swift */; };
 		E406D53A2B70946100DD9AD6 /* localQuizServiceIntegrationTests-quizzes.json in Resources */ = {isa = PBXBuildFile; fileRef = E406D5392B70946100DD9AD6 /* localQuizServiceIntegrationTests-quizzes.json */; };
 		E406D53B2B7096BE00DD9AD6 /* localQuizServiceIntegrationTests-quizzes.json in Resources */ = {isa = PBXBuildFile; fileRef = E406D5392B70946100DD9AD6 /* localQuizServiceIntegrationTests-quizzes.json */; };
+		E406D5412B709A3500DD9AD6 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D5402B709A3500DD9AD6 /* XCTestCase+MemoryLeakTracking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		E406D5332B708EDB00DD9AD6 /* LocalQuizService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalQuizService.swift; sourceTree = "<group>"; };
 		E406D5362B7091F600DD9AD6 /* LocalQuizServiceIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalQuizServiceIntegrationTests.swift; sourceTree = "<group>"; };
 		E406D5392B70946100DD9AD6 /* localQuizServiceIntegrationTests-quizzes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "localQuizServiceIntegrationTests-quizzes.json"; sourceTree = "<group>"; };
+		E406D5402B709A3500DD9AD6 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		E406D5122B70615A00DD9AD6 /* JLPTQuizTests */ = {
 			isa = PBXGroup;
 			children = (
+				E406D53F2B709A2C00DD9AD6 /* Shared Helpers */,
 				E406D5352B7091D800DD9AD6 /* Quiz Service */,
 			);
 			path = JLPTQuizTests;
@@ -159,6 +162,14 @@
 				E406D5392B70946100DD9AD6 /* localQuizServiceIntegrationTests-quizzes.json */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E406D53F2B709A2C00DD9AD6 /* Shared Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E406D5402B709A3500DD9AD6 /* XCTestCase+MemoryLeakTracking.swift */,
+			);
+			path = "Shared Helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +301,7 @@
 			files = (
 				E406D5142B70615A00DD9AD6 /* LocalQuizMapperTests.swift in Sources */,
 				E406D5372B7091F600DD9AD6 /* LocalQuizServiceIntegrationTests.swift in Sources */,
+				E406D5412B709A3500DD9AD6 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
