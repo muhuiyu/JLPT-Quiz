@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		E406D50F2B70615A00DD9AD6 /* JLPTQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E406D5062B70615A00DD9AD6 /* JLPTQuiz.framework */; };
-		E406D5142B70615A00DD9AD6 /* JLPTQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D5132B70615A00DD9AD6 /* JLPTQuizTests.swift */; };
+		E406D5142B70615A00DD9AD6 /* QuizLoaderServiceMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D5132B70615A00DD9AD6 /* QuizLoaderServiceMapperTests.swift */; };
 		E406D5152B70615A00DD9AD6 /* JLPTQuiz.h in Headers */ = {isa = PBXBuildFile; fileRef = E406D5092B70615A00DD9AD6 /* JLPTQuiz.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E406D5212B70663600DD9AD6 /* quizzes.json in Resources */ = {isa = PBXBuildFile; fileRef = E406D5202B70663600DD9AD6 /* quizzes.json */; };
 		E406D5252B70665700DD9AD6 /* grammars.json in Resources */ = {isa = PBXBuildFile; fileRef = E406D5222B70665700DD9AD6 /* grammars.json */; };
 		E406D5262B70665700DD9AD6 /* kanjis.json in Resources */ = {isa = PBXBuildFile; fileRef = E406D5232B70665700DD9AD6 /* kanjis.json */; };
 		E406D5272B70665700DD9AD6 /* vocabs.json in Resources */ = {isa = PBXBuildFile; fileRef = E406D5242B70665700DD9AD6 /* vocabs.json */; };
+		E406D52B2B7066B800DD9AD6 /* QuizLoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D52A2B7066B800DD9AD6 /* QuizLoaderService.swift */; };
+		E406D52D2B706A2100DD9AD6 /* LocalQuizMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D52C2B706A2100DD9AD6 /* LocalQuizMapper.swift */; };
+		E406D5302B706A8000DD9AD6 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D52F2B706A8000DD9AD6 /* Quiz.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,11 +33,14 @@
 		E406D5062B70615A00DD9AD6 /* JLPTQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JLPTQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E406D5092B70615A00DD9AD6 /* JLPTQuiz.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLPTQuiz.h; sourceTree = "<group>"; };
 		E406D50E2B70615A00DD9AD6 /* JLPTQuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLPTQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E406D5132B70615A00DD9AD6 /* JLPTQuizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLPTQuizTests.swift; sourceTree = "<group>"; };
+		E406D5132B70615A00DD9AD6 /* QuizLoaderServiceMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizLoaderServiceMapperTests.swift; sourceTree = "<group>"; };
 		E406D5202B70663600DD9AD6 /* quizzes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quizzes.json; sourceTree = "<group>"; };
 		E406D5222B70665700DD9AD6 /* grammars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = grammars.json; sourceTree = "<group>"; };
 		E406D5232B70665700DD9AD6 /* kanjis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = kanjis.json; sourceTree = "<group>"; };
 		E406D5242B70665700DD9AD6 /* vocabs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vocabs.json; sourceTree = "<group>"; };
+		E406D52A2B7066B800DD9AD6 /* QuizLoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizLoaderService.swift; sourceTree = "<group>"; };
+		E406D52C2B706A2100DD9AD6 /* LocalQuizMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalQuizMapper.swift; sourceTree = "<group>"; };
+		E406D52F2B706A8000DD9AD6 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				E406D51E2B70662500DD9AD6 /* Quiz Feature */,
+				E406D5292B7066AA00DD9AD6 /* Quiz Loader */,
 				E406D5092B70615A00DD9AD6 /* JLPTQuiz.h */,
 			);
 			path = JLPTQuiz;
@@ -86,7 +93,7 @@
 		E406D5122B70615A00DD9AD6 /* JLPTQuizTests */ = {
 			isa = PBXGroup;
 			children = (
-				E406D5132B70615A00DD9AD6 /* JLPTQuizTests.swift */,
+				E406D5132B70615A00DD9AD6 /* QuizLoaderServiceMapperTests.swift */,
 			);
 			path = JLPTQuizTests;
 			sourceTree = "<group>";
@@ -94,7 +101,7 @@
 		E406D51E2B70662500DD9AD6 /* Quiz Feature */ = {
 			isa = PBXGroup;
 			children = (
-				E406D51F2B70662E00DD9AD6 /* Data */,
+				E406D52E2B706A6E00DD9AD6 /* Models */,
 			);
 			path = "Quiz Feature";
 			sourceTree = "<group>";
@@ -108,6 +115,24 @@
 				E406D5242B70665700DD9AD6 /* vocabs.json */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		E406D5292B7066AA00DD9AD6 /* Quiz Loader */ = {
+			isa = PBXGroup;
+			children = (
+				E406D51F2B70662E00DD9AD6 /* Data */,
+				E406D52A2B7066B800DD9AD6 /* QuizLoaderService.swift */,
+				E406D52C2B706A2100DD9AD6 /* LocalQuizMapper.swift */,
+			);
+			path = "Quiz Loader";
+			sourceTree = "<group>";
+		};
+		E406D52E2B706A6E00DD9AD6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E406D52F2B706A8000DD9AD6 /* Quiz.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +197,7 @@
 				TargetAttributes = {
 					E406D5052B70615A00DD9AD6 = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 					};
 					E406D50D2B70615A00DD9AD6 = {
 						CreatedOnToolsVersion = 15.2;
@@ -223,6 +249,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E406D52B2B7066B800DD9AD6 /* QuizLoaderService.swift in Sources */,
+				E406D52D2B706A2100DD9AD6 /* LocalQuizMapper.swift in Sources */,
+				E406D5302B706A8000DD9AD6 /* Quiz.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E406D5142B70615A00DD9AD6 /* JLPTQuizTests.swift in Sources */,
+				E406D5142B70615A00DD9AD6 /* QuizLoaderServiceMapperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +397,7 @@
 		E406D5192B70615A00DD9AD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -398,6 +428,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -406,6 +437,7 @@
 		E406D51A2B70615A00DD9AD6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -444,6 +476,7 @@
 		E406D51C2B70615A00DD9AD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q83M63VYW4;
@@ -464,6 +497,7 @@
 		E406D51D2B70615A00DD9AD6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Q83M63VYW4;
