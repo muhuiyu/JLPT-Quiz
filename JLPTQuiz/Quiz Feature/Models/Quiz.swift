@@ -5,7 +5,7 @@
 //  Created by Mu Yu on 2/5/24.
 //
 
-struct Quiz {
+struct Quiz: Equatable {
     let id: String
     let type: QuizType
     let level: QuizLevel
@@ -27,7 +27,7 @@ enum QuizType: String {
     case vocab
 }
 
-struct OptionEntry {
+struct OptionEntry: Equatable {
     let value: String
     let linkedEntryID: String
     let isAnswer: Bool

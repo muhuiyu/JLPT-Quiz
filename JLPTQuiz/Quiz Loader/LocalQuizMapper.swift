@@ -19,7 +19,7 @@ final class LocalQuizMapper {
         let question: String
         let options: [LocalOptionEntry]
         
-        enum LocalQuizItemType: Decodable {
+        enum LocalQuizItemType: String, Decodable {
             case kanji
             case grammar
             case vocab
@@ -33,7 +33,7 @@ final class LocalQuizMapper {
             }
         }
         
-        enum LocalQuizItemLevel: Decodable {
+        enum LocalQuizItemLevel: String, Decodable {
             case n1
             case n2
             case n3
