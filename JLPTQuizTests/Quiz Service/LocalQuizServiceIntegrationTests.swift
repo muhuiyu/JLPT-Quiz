@@ -24,11 +24,12 @@ final class LocalQuizServiceIntegrationTests: XCTestCase {
         }
     }
     
-    func test_generateSession_deliversFilteredItems() {
+    func test_generateSession_deliversFilteredItemsWhenFilteringType() {
         let sut = makeSUT()
+        let filter = QuizFilter(type: .grammar)
         
         do {
-            let session = try sut.generateSession(filter: QuizFilter(level: .n1, type: .grammar))
+            let session = try sut.generateSession(filter: filter)
             XCTAssertEqual(session.quizList.count, 1)
             XCTAssertEqual(session.quizList[0], expectedItem(at: 0))
         } catch {

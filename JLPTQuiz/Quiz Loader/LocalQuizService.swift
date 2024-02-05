@@ -36,8 +36,18 @@ final class LocalQuizService: QuizService {
     private func filterQuizzes(_ quizzes: [Quiz], with filter: QuizFilter?) -> [Quiz] {
         guard let filter else { return quizzes }
         
-        return quizzes.filter {
-            $0.type == filter.type && $0.level == filter.level
-        }
+        return quizzes
+            .filter { item in
+                guard let type = filter.type else {
+                    return true
+                }
+                return item.type == type
+            }
+            .filter { item in
+                guard let level = filter.level else {
+                    return true
+                }
+                return item.level == level
+            }
     }
 }

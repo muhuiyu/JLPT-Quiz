@@ -21,6 +21,6 @@ struct Session {
 }
 
 struct QuizFilter {
-    let level: QuizLevel
-    let type: QuizType
+    var level: QuizLevel? = nil
+    var type: QuizType? = nil
 }
