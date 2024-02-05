@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E406D50F2B70615A00DD9AD6 /* JLPTQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E406D5062B70615A00DD9AD6 /* JLPTQuiz.framework */; };
-		E406D5142B70615A00DD9AD6 /* QuizLoaderServiceMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D5132B70615A00DD9AD6 /* QuizLoaderServiceMapperTests.swift */; };
+		E406D5142B70615A00DD9AD6 /* LocalQuizMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D5132B70615A00DD9AD6 /* LocalQuizMapperTests.swift */; };
 		E406D5152B70615A00DD9AD6 /* JLPTQuiz.h in Headers */ = {isa = PBXBuildFile; fileRef = E406D5092B70615A00DD9AD6 /* JLPTQuiz.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E406D5212B70663600DD9AD6 /* quizzes.json in Resources */ = {isa = PBXBuildFile; fileRef = E406D5202B70663600DD9AD6 /* quizzes.json */; };
 		E406D5252B70665700DD9AD6 /* grammars.json in Resources */ = {isa = PBXBuildFile; fileRef = E406D5222B70665700DD9AD6 /* grammars.json */; };
@@ -33,7 +33,7 @@
 		E406D5062B70615A00DD9AD6 /* JLPTQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JLPTQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E406D5092B70615A00DD9AD6 /* JLPTQuiz.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLPTQuiz.h; sourceTree = "<group>"; };
 		E406D50E2B70615A00DD9AD6 /* JLPTQuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLPTQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E406D5132B70615A00DD9AD6 /* QuizLoaderServiceMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizLoaderServiceMapperTests.swift; sourceTree = "<group>"; };
+		E406D5132B70615A00DD9AD6 /* LocalQuizMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalQuizMapperTests.swift; sourceTree = "<group>"; };
 		E406D5202B70663600DD9AD6 /* quizzes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quizzes.json; sourceTree = "<group>"; };
 		E406D5222B70665700DD9AD6 /* grammars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = grammars.json; sourceTree = "<group>"; };
 		E406D5232B70665700DD9AD6 /* kanjis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = kanjis.json; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		E406D5122B70615A00DD9AD6 /* JLPTQuizTests */ = {
 			isa = PBXGroup;
 			children = (
-				E406D5132B70615A00DD9AD6 /* QuizLoaderServiceMapperTests.swift */,
+				E406D5132B70615A00DD9AD6 /* LocalQuizMapperTests.swift */,
 			);
 			path = JLPTQuizTests;
 			sourceTree = "<group>";
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E406D5142B70615A00DD9AD6 /* QuizLoaderServiceMapperTests.swift in Sources */,
+				E406D5142B70615A00DD9AD6 /* LocalQuizMapperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
