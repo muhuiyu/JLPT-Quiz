@@ -1,5 +1,5 @@
 //
-//  QuizLoaderService.swift
+//  QuizService.swift
 //  JLPTQuiz
 //
 //  Created by Mu Yu on 2/5/24.
@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol QuizLoaderService {
+protocol QuizService {
     func generateSession(filter: QuizFilter?) -> Session
 }
 
-enum QuizLoaderServiceError: Error {
+enum QuizServiceError: Error {
     case missingFile
     case invalidData
 }

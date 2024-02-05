@@ -14,7 +14,7 @@
 		E406D5252B70665700DD9AD6 /* grammars.json in Resources */ = {isa = PBXBuildFile; fileRef = E406D5222B70665700DD9AD6 /* grammars.json */; };
 		E406D5262B70665700DD9AD6 /* kanjis.json in Resources */ = {isa = PBXBuildFile; fileRef = E406D5232B70665700DD9AD6 /* kanjis.json */; };
 		E406D5272B70665700DD9AD6 /* vocabs.json in Resources */ = {isa = PBXBuildFile; fileRef = E406D5242B70665700DD9AD6 /* vocabs.json */; };
-		E406D52B2B7066B800DD9AD6 /* QuizLoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D52A2B7066B800DD9AD6 /* QuizLoaderService.swift */; };
+		E406D52B2B7066B800DD9AD6 /* QuizService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D52A2B7066B800DD9AD6 /* QuizService.swift */; };
 		E406D52D2B706A2100DD9AD6 /* LocalQuizMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D52C2B706A2100DD9AD6 /* LocalQuizMapper.swift */; };
 		E406D5302B706A8000DD9AD6 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D52F2B706A8000DD9AD6 /* Quiz.swift */; };
 /* End PBXBuildFile section */
@@ -38,7 +38,7 @@
 		E406D5222B70665700DD9AD6 /* grammars.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = grammars.json; sourceTree = "<group>"; };
 		E406D5232B70665700DD9AD6 /* kanjis.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = kanjis.json; sourceTree = "<group>"; };
 		E406D5242B70665700DD9AD6 /* vocabs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vocabs.json; sourceTree = "<group>"; };
-		E406D52A2B7066B800DD9AD6 /* QuizLoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizLoaderService.swift; sourceTree = "<group>"; };
+		E406D52A2B7066B800DD9AD6 /* QuizService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizService.swift; sourceTree = "<group>"; };
 		E406D52C2B706A2100DD9AD6 /* LocalQuizMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalQuizMapper.swift; sourceTree = "<group>"; };
 		E406D52F2B706A8000DD9AD6 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,8 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				E406D51F2B70662E00DD9AD6 /* Data */,
-				E406D52A2B7066B800DD9AD6 /* QuizLoaderService.swift */,
 				E406D52C2B706A2100DD9AD6 /* LocalQuizMapper.swift */,
+				E406D52A2B7066B800DD9AD6 /* QuizService.swift */,
 			);
 			path = "Quiz Loader";
 			sourceTree = "<group>";
@@ -249,7 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E406D52B2B7066B800DD9AD6 /* QuizLoaderService.swift in Sources */,
+				E406D52B2B7066B800DD9AD6 /* QuizService.swift in Sources */,
 				E406D52D2B706A2100DD9AD6 /* LocalQuizMapper.swift in Sources */,
 				E406D5302B706A8000DD9AD6 /* Quiz.swift in Sources */,
 			);
