@@ -22,6 +22,7 @@
 		E406D53A2B70946100DD9AD6 /* localQuizServiceIntegrationTests-quizzes.json in Resources */ = {isa = PBXBuildFile; fileRef = E406D5392B70946100DD9AD6 /* localQuizServiceIntegrationTests-quizzes.json */; };
 		E406D53B2B7096BE00DD9AD6 /* localQuizServiceIntegrationTests-quizzes.json in Resources */ = {isa = PBXBuildFile; fileRef = E406D5392B70946100DD9AD6 /* localQuizServiceIntegrationTests-quizzes.json */; };
 		E406D5412B709A3500DD9AD6 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D5402B709A3500DD9AD6 /* XCTestCase+MemoryLeakTracking.swift */; };
+		E45B1A732B738538001B838D /* XCTestCase+QuizFeatureHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1A722B738538001B838D /* XCTestCase+QuizFeatureHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		E406D5362B7091F600DD9AD6 /* LocalQuizServiceIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalQuizServiceIntegrationTests.swift; sourceTree = "<group>"; };
 		E406D5392B70946100DD9AD6 /* localQuizServiceIntegrationTests-quizzes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "localQuizServiceIntegrationTests-quizzes.json"; sourceTree = "<group>"; };
 		E406D5402B709A3500DD9AD6 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		E45B1A722B738538001B838D /* XCTestCase+QuizFeatureHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+QuizFeatureHelpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				E406D51E2B70662500DD9AD6 /* Quiz Feature */,
-				E406D5292B7066AA00DD9AD6 /* Quiz Loader */,
 				E406D5092B70615A00DD9AD6 /* JLPTQuiz.h */,
 			);
 			path = JLPTQuiz;
@@ -103,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				E406D53F2B709A2C00DD9AD6 /* Shared Helpers */,
-				E406D5352B7091D800DD9AD6 /* Quiz Service */,
+				E406D5352B7091D800DD9AD6 /* Quiz Feature */,
 			);
 			path = JLPTQuizTests;
 			sourceTree = "<group>";
@@ -112,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				E406D52E2B706A6E00DD9AD6 /* Models */,
+				E406D5292B7066AA00DD9AD6 /* Quiz Loader */,
 			);
 			path = "Quiz Feature";
 			sourceTree = "<group>";
@@ -146,20 +148,21 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		E406D5352B7091D800DD9AD6 /* Quiz Service */ = {
+		E406D5352B7091D800DD9AD6 /* Quiz Feature */ = {
 			isa = PBXGroup;
 			children = (
 				E406D5382B70945100DD9AD6 /* Helpers */,
-				E406D5132B70615A00DD9AD6 /* LocalQuizMapperTests.swift */,
-				E406D5362B7091F600DD9AD6 /* LocalQuizServiceIntegrationTests.swift */,
+				E45B1A702B738507001B838D /* Quiz Flow */,
+				E45B1A6E2B7382DC001B838D /* Quiz Loader */,
 			);
-			path = "Quiz Service";
+			path = "Quiz Feature";
 			sourceTree = "<group>";
 		};
 		E406D5382B70945100DD9AD6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				E406D5392B70946100DD9AD6 /* localQuizServiceIntegrationTests-quizzes.json */,
+				E45B1A6F2B7384E9001B838D /* Data */,
+				E45B1A722B738538001B838D /* XCTestCase+QuizFeatureHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -170,6 +173,30 @@
 				E406D5402B709A3500DD9AD6 /* XCTestCase+MemoryLeakTracking.swift */,
 			);
 			path = "Shared Helpers";
+			sourceTree = "<group>";
+		};
+		E45B1A6E2B7382DC001B838D /* Quiz Loader */ = {
+			isa = PBXGroup;
+			children = (
+				E406D5132B70615A00DD9AD6 /* LocalQuizMapperTests.swift */,
+				E406D5362B7091F600DD9AD6 /* LocalQuizServiceIntegrationTests.swift */,
+			);
+			path = "Quiz Loader";
+			sourceTree = "<group>";
+		};
+		E45B1A6F2B7384E9001B838D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E406D5392B70946100DD9AD6 /* localQuizServiceIntegrationTests-quizzes.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E45B1A702B738507001B838D /* Quiz Flow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Quiz Flow";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E45B1A732B738538001B838D /* XCTestCase+QuizFeatureHelpers.swift in Sources */,
 				E406D5142B70615A00DD9AD6 /* LocalQuizMapperTests.swift in Sources */,
 				E406D5372B7091F600DD9AD6 /* LocalQuizServiceIntegrationTests.swift in Sources */,
 				E406D5412B709A3500DD9AD6 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
