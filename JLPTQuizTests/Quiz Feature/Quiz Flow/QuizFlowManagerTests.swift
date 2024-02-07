@@ -17,6 +17,20 @@ final class QuizFlowManagerTests: XCTestCase {
             try flowManager.load()
         )
     }
+    
+    func test_load_setsCurrentQuizAsTheFirstQuizInListAfterLoading() {
+        let quiz1 = makeQuizItem(id: "id-1")
+        let quiz2 = makeQuizItem(id: "id-2")
+        let service = FakeQuizService(quizList: [quiz1.model, quiz2.model])
+        let flowManager = QuizFlowManager(service: service)
+        
+        do {
+            try flowManager.load()
+            XCTAssertEqual(flowManager.currentQuiz, quiz1.model, "Expected current quiz to be the same as the first quiz in list")
+        } catch {
+            XCTFail("Expected success, received \(error) instead")
+        }
+    }
 }
 
 class FakeQuizService: QuizService {
