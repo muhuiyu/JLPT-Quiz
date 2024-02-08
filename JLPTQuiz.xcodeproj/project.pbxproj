@@ -37,7 +37,7 @@
 		E45B1AD32B7481AA001B838D /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AD22B7481AA001B838D /* CoordinatorFactory.swift */; };
 		E45B1AD72B74820C001B838D /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AD62B74820C001B838D /* Icon.swift */; };
 		E45B1ADA2B748260001B838D /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AD92B748260001B838D /* Text.swift */; };
-		E45B1ADC2B748275001B838D /* Text+TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1ADB2B748275001B838D /* Text+TabCoordinator.swift */; };
+		E45B1ADC2B748275001B838D /* Text+TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1ADB2B748275001B838D /* Text+TabBarPage.swift */; };
 		E45B1AE12B7483DF001B838D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AE02B7483DF001B838D /* ViewController.swift */; };
 		E45B1AE32B7483E3001B838D /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AE22B7483E3001B838D /* Base.swift */; };
 		E45B1AE62B7483FF001B838D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E45B1AE52B7483FE001B838D /* SnapKit */; };
@@ -125,7 +125,7 @@
 		E45B1AD22B7481AA001B838D /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
 		E45B1AD62B74820C001B838D /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
 		E45B1AD92B748260001B838D /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
-		E45B1ADB2B748275001B838D /* Text+TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+TabCoordinator.swift"; sourceTree = "<group>"; };
+		E45B1ADB2B748275001B838D /* Text+TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+TabBarPage.swift"; sourceTree = "<group>"; };
 		E45B1AE02B7483DF001B838D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E45B1AE22B7483E3001B838D /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		E45B1AE72B74842A001B838D /* QuizCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCoordinator.swift; sourceTree = "<group>"; };
@@ -398,7 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				E45B1AD92B748260001B838D /* Text.swift */,
-				E45B1ADB2B748275001B838D /* Text+TabCoordinator.swift */,
+				E45B1ADB2B748275001B838D /* Text+TabBarPage.swift */,
 				E45B1AF92B748A3E001B838D /* Text+StartQuizViewController.swift */,
 			);
 			path = Localization;
@@ -693,7 +693,7 @@
 				E45B1AEA2B748541001B838D /* TabBarPage.swift in Sources */,
 				E45B1AD32B7481AA001B838D /* CoordinatorFactory.swift in Sources */,
 				E45B1A9C2B747F9C001B838D /* SceneDelegate.swift in Sources */,
-				E45B1ADC2B748275001B838D /* Text+TabCoordinator.swift in Sources */,
+				E45B1ADC2B748275001B838D /* Text+TabBarPage.swift in Sources */,
 				E45B1ACC2B748085001B838D /* Coordinator.swift in Sources */,
 				E45B1AE32B7483E3001B838D /* Base.swift in Sources */,
 				E45B1AFA2B748A3E001B838D /* Text+StartQuizViewController.swift in Sources */,

@@ -16,7 +16,7 @@ enum TabBarPage: Int, CaseIterable {
     
     var title: String {
         switch self {
-        case .quiz: return Text.tabQuiz
+        case .quiz: return Text.TabBarPage.quiz
         }
     }
     
