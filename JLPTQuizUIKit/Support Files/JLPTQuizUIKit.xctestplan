@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "C76B8359-AB01-4979-A90F-9758CECC99D4",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:JLPTQuiz.xcodeproj",
+      "identifier" : "E45B1A962B747F9C001B838D",
+      "name" : "JLPTQuizUIKit"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:JLPTQuiz.xcodeproj",
+        "identifier" : "E45B1AAB2B747F9D001B838D",
+        "name" : "JLPTQuizUIKitTests"
+      }
+    }
+  ],
+  "version" : 1
+}

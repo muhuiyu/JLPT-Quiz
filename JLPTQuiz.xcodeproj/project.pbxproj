@@ -26,6 +26,11 @@
 		E45B1A752B73861A001B838D /* QuizFlowManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1A742B73861A001B838D /* QuizFlowManagerTests.swift */; };
 		E45B1A782B747EF7001B838D /* QuizFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1A772B747EF7001B838D /* QuizFlowManager.swift */; };
 		E45B1A7A2B747F15001B838D /* QuizFlowManagerTests+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1A792B747F15001B838D /* QuizFlowManagerTests+Helpers.swift */; };
+		E45B1A9A2B747F9C001B838D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1A992B747F9C001B838D /* AppDelegate.swift */; };
+		E45B1A9C2B747F9C001B838D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1A9B2B747F9C001B838D /* SceneDelegate.swift */; };
+		E45B1AA32B747F9D001B838D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45B1AA22B747F9D001B838D /* Assets.xcassets */; };
+		E45B1AA62B747F9D001B838D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45B1AA42B747F9D001B838D /* LaunchScreen.storyboard */; };
+		E45B1AB12B747F9D001B838D /* JLPTQuizUIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AB02B747F9D001B838D /* JLPTQuizUIKitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = E406D5052B70615A00DD9AD6;
 			remoteInfo = JLPTQuiz;
+		};
+		E45B1AAD2B747F9D001B838D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E406D4FD2B70615900DD9AD6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E45B1A962B747F9C001B838D;
+			remoteInfo = JLPTQuizUIKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -58,6 +70,15 @@
 		E45B1A742B73861A001B838D /* QuizFlowManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizFlowManagerTests.swift; sourceTree = "<group>"; };
 		E45B1A772B747EF7001B838D /* QuizFlowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizFlowManager.swift; sourceTree = "<group>"; };
 		E45B1A792B747F15001B838D /* QuizFlowManagerTests+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizFlowManagerTests+Helpers.swift"; sourceTree = "<group>"; };
+		E45B1A972B747F9C001B838D /* JLPTQuizUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JLPTQuizUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E45B1A992B747F9C001B838D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E45B1A9B2B747F9C001B838D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E45B1AA22B747F9D001B838D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E45B1AA52B747F9D001B838D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E45B1AA72B747F9D001B838D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E45B1AAC2B747F9D001B838D /* JLPTQuizUIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLPTQuizUIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E45B1AB02B747F9D001B838D /* JLPTQuizUIKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLPTQuizUIKitTests.swift; sourceTree = "<group>"; };
+		E45B1AC72B747FC8001B838D /* JLPTQuizUIKit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = JLPTQuizUIKit.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +97,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E45B1A942B747F9C001B838D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E45B1AA92B747F9D001B838D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -84,6 +119,8 @@
 			children = (
 				E406D5082B70615A00DD9AD6 /* JLPTQuiz */,
 				E406D5122B70615A00DD9AD6 /* JLPTQuizTests */,
+				E45B1A982B747F9C001B838D /* JLPTQuizUIKit */,
+				E45B1AAF2B747F9D001B838D /* JLPTQuizUIKitTests */,
 				E406D5072B70615A00DD9AD6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,6 +130,8 @@
 			children = (
 				E406D5062B70615A00DD9AD6 /* JLPTQuiz.framework */,
 				E406D50E2B70615A00DD9AD6 /* JLPTQuizTests.xctest */,
+				E45B1A972B747F9C001B838D /* JLPTQuizUIKit.app */,
+				E45B1AAC2B747F9D001B838D /* JLPTQuizUIKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,6 +255,35 @@
 			path = "Quiz Flow";
 			sourceTree = "<group>";
 		};
+		E45B1A982B747F9C001B838D /* JLPTQuizUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				E45B1AC82B747FD3001B838D /* Support Files */,
+				E45B1AA72B747F9D001B838D /* Info.plist */,
+			);
+			path = JLPTQuizUIKit;
+			sourceTree = "<group>";
+		};
+		E45B1AAF2B747F9D001B838D /* JLPTQuizUIKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				E45B1AB02B747F9D001B838D /* JLPTQuizUIKitTests.swift */,
+			);
+			path = JLPTQuizUIKitTests;
+			sourceTree = "<group>";
+		};
+		E45B1AC82B747FD3001B838D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E45B1AC72B747FC8001B838D /* JLPTQuizUIKit.xctestplan */,
+				E45B1A992B747F9C001B838D /* AppDelegate.swift */,
+				E45B1A9B2B747F9C001B838D /* SceneDelegate.swift */,
+				E45B1AA22B747F9D001B838D /* Assets.xcassets */,
+				E45B1AA42B747F9D001B838D /* LaunchScreen.storyboard */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -266,6 +334,41 @@
 			productReference = E406D50E2B70615A00DD9AD6 /* JLPTQuizTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		E45B1A962B747F9C001B838D /* JLPTQuizUIKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E45B1ABE2B747F9D001B838D /* Build configuration list for PBXNativeTarget "JLPTQuizUIKit" */;
+			buildPhases = (
+				E45B1A932B747F9C001B838D /* Sources */,
+				E45B1A942B747F9C001B838D /* Frameworks */,
+				E45B1A952B747F9C001B838D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JLPTQuizUIKit;
+			productName = JLPTQuizUIKit;
+			productReference = E45B1A972B747F9C001B838D /* JLPTQuizUIKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E45B1AAB2B747F9D001B838D /* JLPTQuizUIKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E45B1AC12B747F9D001B838D /* Build configuration list for PBXNativeTarget "JLPTQuizUIKitTests" */;
+			buildPhases = (
+				E45B1AA82B747F9D001B838D /* Sources */,
+				E45B1AA92B747F9D001B838D /* Frameworks */,
+				E45B1AAA2B747F9D001B838D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E45B1AAE2B747F9D001B838D /* PBXTargetDependency */,
+			);
+			name = JLPTQuizUIKitTests;
+			productName = JLPTQuizUIKitTests;
+			productReference = E45B1AAC2B747F9D001B838D /* JLPTQuizUIKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -282,6 +385,13 @@
 					};
 					E406D50D2B70615A00DD9AD6 = {
 						CreatedOnToolsVersion = 15.2;
+					};
+					E45B1A962B747F9C001B838D = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					E45B1AAB2B747F9D001B838D = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = E45B1A962B747F9C001B838D;
 					};
 				};
 			};
@@ -300,6 +410,8 @@
 			targets = (
 				E406D5052B70615A00DD9AD6 /* JLPTQuiz */,
 				E406D50D2B70615A00DD9AD6 /* JLPTQuizTests */,
+				E45B1A962B747F9C001B838D /* JLPTQuizUIKit */,
+				E45B1AAB2B747F9D001B838D /* JLPTQuizUIKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -322,6 +434,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				E406D53A2B70946100DD9AD6 /* localQuizServiceIntegrationTests-quizzes.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E45B1A952B747F9C001B838D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E45B1AA62B747F9D001B838D /* LaunchScreen.storyboard in Resources */,
+				E45B1AA32B747F9D001B838D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E45B1AAA2B747F9D001B838D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +481,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E45B1A932B747F9C001B838D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E45B1A9A2B747F9C001B838D /* AppDelegate.swift in Sources */,
+				E45B1A9C2B747F9C001B838D /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E45B1AA82B747F9D001B838D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E45B1AB12B747F9D001B838D /* JLPTQuizUIKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -361,7 +506,23 @@
 			target = E406D5052B70615A00DD9AD6 /* JLPTQuiz */;
 			targetProxy = E406D5102B70615A00DD9AD6 /* PBXContainerItemProxy */;
 		};
+		E45B1AAE2B747F9D001B838D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E45B1A962B747F9C001B838D /* JLPTQuizUIKit */;
+			targetProxy = E45B1AAD2B747F9D001B838D /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E45B1AA42B747F9D001B838D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E45B1AA52B747F9D001B838D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E406D5162B70615A00DD9AD6 /* Debug */ = {
@@ -605,6 +766,108 @@
 			};
 			name = Release;
 		};
+		E45B1ABF2B747F9D001B838D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q83M63VYW4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JLPTQuizUIKit/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.muhuiyu.JLPTQuizUIKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E45B1AC02B747F9D001B838D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q83M63VYW4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = JLPTQuizUIKit/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.muhuiyu.JLPTQuizUIKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E45B1AC22B747F9D001B838D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q83M63VYW4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.muhuiyu.JLPTQuizUIKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JLPTQuizUIKit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JLPTQuizUIKit";
+			};
+			name = Debug;
+		};
+		E45B1AC32B747F9D001B838D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q83M63VYW4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.muhuiyu.JLPTQuizUIKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JLPTQuizUIKit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/JLPTQuizUIKit";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -631,6 +894,24 @@
 			buildConfigurations = (
 				E406D51C2B70615A00DD9AD6 /* Debug */,
 				E406D51D2B70615A00DD9AD6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E45B1ABE2B747F9D001B838D /* Build configuration list for PBXNativeTarget "JLPTQuizUIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E45B1ABF2B747F9D001B838D /* Debug */,
+				E45B1AC02B747F9D001B838D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E45B1AC12B747F9D001B838D /* Build configuration list for PBXNativeTarget "JLPTQuizUIKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E45B1AC22B747F9D001B838D /* Debug */,
+				E45B1AC32B747F9D001B838D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
