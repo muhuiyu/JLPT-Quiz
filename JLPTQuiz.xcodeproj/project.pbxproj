@@ -31,6 +31,13 @@
 		E45B1AA32B747F9D001B838D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E45B1AA22B747F9D001B838D /* Assets.xcassets */; };
 		E45B1AA62B747F9D001B838D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E45B1AA42B747F9D001B838D /* LaunchScreen.storyboard */; };
 		E45B1AB12B747F9D001B838D /* JLPTQuizUIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AB02B747F9D001B838D /* JLPTQuizUIKitTests.swift */; };
+		E45B1ACC2B748085001B838D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1ACB2B748085001B838D /* Coordinator.swift */; };
+		E45B1ACE2B7480CE001B838D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1ACD2B7480CE001B838D /* AppCoordinator.swift */; };
+		E45B1AD02B748100001B838D /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1ACF2B748100001B838D /* TabCoordinator.swift */; };
+		E45B1AD32B7481AA001B838D /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AD22B7481AA001B838D /* CoordinatorFactory.swift */; };
+		E45B1AD72B74820C001B838D /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AD62B74820C001B838D /* Icon.swift */; };
+		E45B1ADA2B748260001B838D /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AD92B748260001B838D /* Text.swift */; };
+		E45B1ADC2B748275001B838D /* Text+TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1ADB2B748275001B838D /* Text+TabCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +86,13 @@
 		E45B1AAC2B747F9D001B838D /* JLPTQuizUIKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLPTQuizUIKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45B1AB02B747F9D001B838D /* JLPTQuizUIKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLPTQuizUIKitTests.swift; sourceTree = "<group>"; };
 		E45B1AC72B747FC8001B838D /* JLPTQuizUIKit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = JLPTQuizUIKit.xctestplan; sourceTree = "<group>"; };
+		E45B1ACB2B748085001B838D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		E45B1ACD2B7480CE001B838D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		E45B1ACF2B748100001B838D /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
+		E45B1AD22B7481AA001B838D /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
+		E45B1AD62B74820C001B838D /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		E45B1AD92B748260001B838D /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		E45B1ADB2B748275001B838D /* Text+TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+TabCoordinator.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,7 +272,10 @@
 		E45B1A982B747F9C001B838D /* JLPTQuizUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				E45B1AC82B747FD3001B838D /* Support Files */,
+				E45B1AC92B748067001B838D /* Navigation */,
+				E45B1ACA2B74806B001B838D /* Features */,
+				E45B1AD42B7481EA001B838D /* Shared UI Helpers */,
+				E45B1AC82B747FD3001B838D /* Supporting Files */,
 				E45B1AA72B747F9D001B838D /* Info.plist */,
 			);
 			path = JLPTQuizUIKit;
@@ -272,7 +289,7 @@
 			path = JLPTQuizUIKitTests;
 			sourceTree = "<group>";
 		};
-		E45B1AC82B747FD3001B838D /* Support Files */ = {
+		E45B1AC82B747FD3001B838D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				E45B1AC72B747FC8001B838D /* JLPTQuizUIKit.xctestplan */,
@@ -281,7 +298,59 @@
 				E45B1AA22B747F9D001B838D /* Assets.xcassets */,
 				E45B1AA42B747F9D001B838D /* LaunchScreen.storyboard */,
 			);
-			path = "Support Files";
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E45B1AC92B748067001B838D /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				E45B1AD12B7481A4001B838D /* Helpers */,
+				E45B1ACB2B748085001B838D /* Coordinator.swift */,
+				E45B1ACD2B7480CE001B838D /* AppCoordinator.swift */,
+				E45B1ACF2B748100001B838D /* TabCoordinator.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		E45B1ACA2B74806B001B838D /* Features */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		E45B1AD12B7481A4001B838D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E45B1AD22B7481AA001B838D /* CoordinatorFactory.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E45B1AD42B7481EA001B838D /* Shared UI Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E45B1AD52B748201001B838D /* Theme */,
+				E45B1AD82B748256001B838D /* Localization */,
+			);
+			path = "Shared UI Helpers";
+			sourceTree = "<group>";
+		};
+		E45B1AD52B748201001B838D /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				E45B1AD62B74820C001B838D /* Icon.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		E45B1AD82B748256001B838D /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				E45B1AD92B748260001B838D /* Text.swift */,
+				E45B1ADB2B748275001B838D /* Text+TabCoordinator.swift */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,8 +554,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E45B1AD02B748100001B838D /* TabCoordinator.swift in Sources */,
+				E45B1ACE2B7480CE001B838D /* AppCoordinator.swift in Sources */,
+				E45B1ADA2B748260001B838D /* Text.swift in Sources */,
+				E45B1AD72B74820C001B838D /* Icon.swift in Sources */,
 				E45B1A9A2B747F9C001B838D /* AppDelegate.swift in Sources */,
+				E45B1AD32B7481AA001B838D /* CoordinatorFactory.swift in Sources */,
 				E45B1A9C2B747F9C001B838D /* SceneDelegate.swift in Sources */,
+				E45B1ADC2B748275001B838D /* Text+TabCoordinator.swift in Sources */,
+				E45B1ACC2B748085001B838D /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

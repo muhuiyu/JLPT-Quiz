@@ -17,11 +17,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         self.window = window
         
-        let viewController = UIViewController()
-        viewController.view.backgroundColor = .orange
+        let (coordinator, navigationController) = CoordinatorFactory.makeAppCoordinator()
         
-        window.rootViewController = viewController
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
+        
+        coordinator.start()
     }
 }
-
