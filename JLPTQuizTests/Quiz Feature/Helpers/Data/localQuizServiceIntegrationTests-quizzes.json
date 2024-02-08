@@ -45,12 +45,35 @@
             },
             {
                 "value": "question-3/option-3",
-                "isAnswer": true,
+                "isAnswer": false,
                 "linkedEntry": "linkedEntry-6"
             }
         ],
         "level": "n5",
         "question": "question-3",
+        "type": "vocab"
+    },
+    {
+        "id": "id-4",
+        "options": [
+            {
+                "value": "question-4/option-1",
+                "isAnswer": true,
+                "linkedEntry": "linkedEntry-7"
+            },
+            {
+                "value": "question-4/option-2",
+                "isAnswer": false,
+                "linkedEntry": "linkedEntry-8"
+            },
+            {
+                "value": "question-4/option-3",
+                "isAnswer": false,
+                "linkedEntry": "linkedEntry-9"
+            }
+        ],
+        "level": "n5",
+        "question": "question-4",
         "type": "vocab"
     }
 ]

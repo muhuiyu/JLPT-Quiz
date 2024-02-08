@@ -8,7 +8,7 @@
 import Foundation
 
 public protocol QuizService {
-    func generateSession(filter: QuizFilter?) throws -> Session
+    func generateSession(filter: QuizConfig?) throws -> Session
 }
 
 public enum QuizServiceError: Error {
@@ -20,7 +20,8 @@ public struct Session {
     public let quizList: [Quiz]
 }
 
-public struct QuizFilter {
-    public var level: QuizLevel? = nil
-    public var type: QuizType? = nil
+public struct QuizConfig {
+    public var numberOfQuestions: Int
+    public var level: QuizLevel?
+    public var type: QuizType?
 }

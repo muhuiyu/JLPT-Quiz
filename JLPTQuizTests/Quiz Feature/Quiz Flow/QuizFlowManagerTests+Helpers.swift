@@ -36,7 +36,7 @@ class FakeQuizService: QuizService {
         self.quizList = quizList
     }
     
-    func generateSession(filter: JLPTQuiz.QuizFilter?) throws -> JLPTQuiz.Session {
+    func generateSession(filter: JLPTQuiz.QuizConfig?) throws -> JLPTQuiz.Session {
         return Session(quizList: quizList)
     }
 }

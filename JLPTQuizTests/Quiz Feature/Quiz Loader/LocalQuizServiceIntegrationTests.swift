@@ -15,10 +15,11 @@ final class LocalQuizServiceIntegrationTests: XCTestCase {
         
         do {
             let session = try sut.generateSession()
-            XCTAssertEqual(session.quizList.count, 3)
+            XCTAssertEqual(session.quizList.count, 4)
             XCTAssertEqual(session.quizList[0], expectedItem(at: 0))
             XCTAssertEqual(session.quizList[1], expectedItem(at: 1))
             XCTAssertEqual(session.quizList[2], expectedItem(at: 2))
+            XCTAssertEqual(session.quizList[3], expectedItem(at: 3))
         } catch {
             XCTFail("Expected to load quizzes successfully, received \(error) instead")
         }
@@ -26,7 +27,7 @@ final class LocalQuizServiceIntegrationTests: XCTestCase {
     
     func test_generateSession_deliversFilteredItemsWhenFilteringType() {
         let sut = makeSUT()
-        let filter = QuizFilter(type: .grammar)
+        let filter = QuizConfig(numberOfQuestions: 1, type: .grammar)
         
         do {
             let session = try sut.generateSession(filter: filter)
@@ -39,12 +40,13 @@ final class LocalQuizServiceIntegrationTests: XCTestCase {
     
     func test_generateSession_deliversFilteredItemsWhenFilteringLevel() {
         let sut = makeSUT()
-        let filter = QuizFilter(level: .n5)
+        let filter = QuizConfig(numberOfQuestions: 2, level: .n5)
         
         do {
             let session = try sut.generateSession(filter: filter)
-            XCTAssertEqual(session.quizList.count, 1)
+            XCTAssertEqual(session.quizList.count, 2)
             XCTAssertEqual(session.quizList[0], expectedItem(at: 2))
+            XCTAssertEqual(session.quizList[1], expectedItem(at: 3))
         } catch {
             XCTFail("Expected to load filtered quizzes, received \(error) instead")
         }
@@ -69,19 +71,19 @@ extension LocalQuizServiceIntegrationTests {
     }
     
     private func id(at index: Int) -> String {
-        return ["id-1", "id-2", "id-3"][index]
+        return ["id-1", "id-2", "id-3", "id-4"][index]
     }
     
     private func type(at index: Int) -> QuizType {
-        return [.grammar, .kanji, .vocab][index]
+        return [.grammar, .kanji, .vocab, .vocab][index]
     }
     
     private func level(at index: Int) -> QuizLevel {
-        return [.n1, .n3, .n5][index]
+        return [.n1, .n3, .n5, .n5][index]
     }
     
     private func question(at index: Int) -> String {
-        return ["question-1", "question-2", "question-3"][index]
+        return ["question-1", "question-2", "question-3", "question-4"][index]
     }
     
     private func options(at index: Int) -> [OptionEntry] {
@@ -96,8 +98,13 @@ extension LocalQuizServiceIntegrationTests {
             [
                 OptionEntry(value: "question-3/option-1", linkedEntryID: "linkedEntry-4", isAnswer: true),
                 OptionEntry(value: "question-3/option-2", linkedEntryID: "linkedEntry-5", isAnswer: false),
-                OptionEntry(value: "question-3/option-3", linkedEntryID: "linkedEntry-6", isAnswer: true)
-            ]
+                OptionEntry(value: "question-3/option-3", linkedEntryID: "linkedEntry-6", isAnswer: false)
+            ],
+            [
+                OptionEntry(value: "question-4/option-1", linkedEntryID: "linkedEntry-7", isAnswer: true),
+                OptionEntry(value: "question-4/option-2", linkedEntryID: "linkedEntry-8", isAnswer: false),
+                OptionEntry(value: "question-4/option-3", linkedEntryID: "linkedEntry-9", isAnswer: false)
+            ],
         ][index]
     }
 }

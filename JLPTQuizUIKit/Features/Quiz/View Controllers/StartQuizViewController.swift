@@ -13,6 +13,8 @@ class StartQuizViewController: BaseViewController<StartQuizViewModel> {
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
     private let startButton = UIButton()
     
+    var didTapStart: (() -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
