@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import JLPTQuiz
 
 protocol QuizCoordinatorProtocol: Coordinator {
     func showStartScreen()
-    func showQuizSessionScreen()
+    func showQuizSessionScreen(with config: QuizConfig)
 }
 
 class QuizCoordinator: QuizCoordinatorProtocol {
@@ -36,13 +37,17 @@ class QuizCoordinator: QuizCoordinatorProtocol {
     }
     
     func showStartScreen() {
-        let viewController = JLPTQuizUIComposer.makeStartQuizComposedWith(coordinator: self)
+        let viewController = JLPTQuizUIComposer.makeStartQuizComposedWith(coordinator: self, didTapStart: { [weak self] config in
+            self?.showQuizSessionScreen(with: config)
+        })
         viewController.tabBarItem = tabBarItem
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    func showQuizSessionScreen() {
-        
+    func showQuizSessionScreen(with config: QuizConfig) {
+        let viewController = ViewController()
+        viewController.view.backgroundColor = .orange
+        navigationController.present(viewController, animated: true)
     }
 }
 

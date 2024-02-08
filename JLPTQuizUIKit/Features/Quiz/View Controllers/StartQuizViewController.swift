@@ -13,7 +13,7 @@ class StartQuizViewController: BaseViewController<StartQuizViewModel> {
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
     private let startButton = UIButton()
     
-    var didTapStart: (() -> Void)?
+    var didTapStart: ((QuizConfig) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,17 +33,8 @@ extension StartQuizViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemGroupedBackground
         
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(StartQuizConfigCell.self, forCellReuseIdentifier: StartQuizConfigCell.reuseID)
-        view.addSubview(tableView)
-        
-        startButton.setTitle(Text.StartQuizViewController.startButtonTitle, for: .normal)
-        startButton.setTitleColor(.white, for: .normal)
-        startButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
-        startButton.backgroundColor = .systemBlue
-        startButton.layer.cornerRadius = 12
-        view.addSubview(startButton)
+        configureTableView()
+        configureStartButton()
     }
     
     private func configureConstraints() {
@@ -65,6 +56,26 @@ extension StartQuizViewController {
                 self?.tableView.reloadData()
             }
             .store(in: &subscriptions)
+    }
+    
+    private func configureTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(StartQuizConfigCell.self, forCellReuseIdentifier: StartQuizConfigCell.reuseID)
+        view.addSubview(tableView)
+    }
+    
+    private func configureStartButton() {
+        startButton.setTitle(Text.StartQuizViewController.startButtonTitle, for: .normal)
+        startButton.setTitleColor(.white, for: .normal)
+        startButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
+        startButton.backgroundColor = .systemBlue
+        startButton.layer.cornerRadius = 12
+        startButton.addAction(UIAction(handler: { [weak self] _ in
+            guard let self else { return }
+            self.didTapStart?(self.viewModel.quizConfig)
+        }), for: .touchUpInside)
+        view.addSubview(startButton)
     }
 }
 
