@@ -38,12 +38,7 @@ final class QuizFlowManagerTests: XCTestCase {
     }
     
     func test_selectAnswer_returnCorrectResult_whenSelectingCorrectAnswer() {
-        let correctOption = OptionEntry(value: "correct option", linkedEntryID: "id-1", isAnswer: true)
-        let wrongOption = OptionEntry(value: "wrong option", linkedEntryID: "id-2", isAnswer: false)
-        let quiz1 = makeQuizItem(id: "id-1", options: [correctOption, wrongOption])
-        let quiz2 = makeQuizItem(id: "id-2", options: [correctOption, wrongOption])
-        let service = FakeQuizService(quizList: [quiz1.model, quiz2.model])
-        let flowManager = QuizFlowManager(service: service)
+        let flowManager = makeSUTSetupWithTwoQuestionsTwoOptionsAndFirstOptionIsCorrect()
         
         do {
             try flowManager.load()
@@ -55,12 +50,7 @@ final class QuizFlowManagerTests: XCTestCase {
     }
     
     func test_selectAnswer_returnWrongResult_whenSelectingWrongAnswer() {
-        let correctOption = OptionEntry(value: "correct option", linkedEntryID: "id-1", isAnswer: true)
-        let wrongOption = OptionEntry(value: "wrong option", linkedEntryID: "id-2", isAnswer: false)
-        let quiz1 = makeQuizItem(id: "id-1", options: [correctOption, wrongOption])
-        let quiz2 = makeQuizItem(id: "id-2", options: [correctOption, wrongOption])
-        let service = FakeQuizService(quizList: [quiz1.model, quiz2.model])
-        let flowManager = QuizFlowManager(service: service)
+        let flowManager = makeSUTSetupWithTwoQuestionsTwoOptionsAndFirstOptionIsCorrect()
         
         do {
             try flowManager.load()
@@ -69,6 +59,18 @@ final class QuizFlowManagerTests: XCTestCase {
         } catch {
             XCTFail("Expected success, received \(error) instead")
         }
+    }
+}
+
+extension QuizFlowManagerTests {
+    private func makeSUTSetupWithTwoQuestionsTwoOptionsAndFirstOptionIsCorrect() -> QuizFlowManager {
+        let correctOption = OptionEntry(value: "correct option", linkedEntryID: "id-1", isAnswer: true)
+        let wrongOption = OptionEntry(value: "wrong option", linkedEntryID: "id-2", isAnswer: false)
+        let quiz1 = makeQuizItem(id: "id-1", options: [correctOption, wrongOption])
+        let quiz2 = makeQuizItem(id: "id-2", options: [correctOption, wrongOption])
+        let service = FakeQuizService(quizList: [quiz1.model, quiz2.model])
+        let flowManager = QuizFlowManager(service: service)
+        return flowManager
     }
 }
 
