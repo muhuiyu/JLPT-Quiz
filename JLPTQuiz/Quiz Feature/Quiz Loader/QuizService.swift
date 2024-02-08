@@ -7,20 +7,20 @@
 
 import Foundation
 
-protocol QuizService {
+public protocol QuizService {
     func generateSession(filter: QuizFilter?) throws -> Session
 }
 
-enum QuizServiceError: Error {
+public enum QuizServiceError: Error {
     case missingFile
     case invalidData
 }
 
-struct Session {
-    let quizList: [Quiz]
+public struct Session {
+    public let quizList: [Quiz]
 }
 
-struct QuizFilter {
-    var level: QuizLevel? = nil
-    var type: QuizType? = nil
+public struct QuizFilter {
+    public var level: QuizLevel? = nil
+    public var type: QuizType? = nil
 }

@@ -43,6 +43,13 @@
 		E45B1AE62B7483FF001B838D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E45B1AE52B7483FE001B838D /* SnapKit */; };
 		E45B1AE82B74842A001B838D /* QuizCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AE72B74842A001B838D /* QuizCoordinator.swift */; };
 		E45B1AEA2B748541001B838D /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AE92B748541001B838D /* TabBarPage.swift */; };
+		E45B1AED2B748627001B838D /* StartQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AEC2B748627001B838D /* StartQuizViewController.swift */; };
+		E45B1AF22B748666001B838D /* JLPTQuizUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AF12B748666001B838D /* JLPTQuizUIComposer.swift */; };
+		E45B1AF42B74891F001B838D /* JLPTQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E406D5062B70615A00DD9AD6 /* JLPTQuiz.framework */; };
+		E45B1AF52B74891F001B838D /* JLPTQuiz.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E406D5062B70615A00DD9AD6 /* JLPTQuiz.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E45B1AFA2B748A3E001B838D /* Text+StartQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AF92B748A3E001B838D /* Text+StartQuizViewController.swift */; };
+		E45B1AFF2B749155001B838D /* StartQuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AFE2B749155001B838D /* StartQuizViewModel.swift */; };
+		E45B1B012B74916F001B838D /* StartQuizConfigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1B002B74916F001B838D /* StartQuizConfigCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +67,28 @@
 			remoteGlobalIDString = E45B1A962B747F9C001B838D;
 			remoteInfo = JLPTQuizUIKit;
 		};
+		E45B1AF62B74891F001B838D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E406D4FD2B70615900DD9AD6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E406D5052B70615A00DD9AD6;
+			remoteInfo = JLPTQuiz;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E45B1AF82B74891F001B838D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E45B1AF52B74891F001B838D /* JLPTQuiz.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E406D5062B70615A00DD9AD6 /* JLPTQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JLPTQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +130,11 @@
 		E45B1AE22B7483E3001B838D /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		E45B1AE72B74842A001B838D /* QuizCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCoordinator.swift; sourceTree = "<group>"; };
 		E45B1AE92B748541001B838D /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
+		E45B1AEC2B748627001B838D /* StartQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartQuizViewController.swift; sourceTree = "<group>"; };
+		E45B1AF12B748666001B838D /* JLPTQuizUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLPTQuizUIComposer.swift; sourceTree = "<group>"; };
+		E45B1AF92B748A3E001B838D /* Text+StartQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+StartQuizViewController.swift"; sourceTree = "<group>"; };
+		E45B1AFE2B749155001B838D /* StartQuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartQuizViewModel.swift; sourceTree = "<group>"; };
+		E45B1B002B74916F001B838D /* StartQuizConfigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartQuizConfigCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E45B1AE62B7483FF001B838D /* SnapKit in Frameworks */,
+				E45B1AF42B74891F001B838D /* JLPTQuiz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +180,7 @@
 				E45B1A982B747F9C001B838D /* JLPTQuizUIKit */,
 				E45B1AAF2B747F9D001B838D /* JLPTQuizUIKitTests */,
 				E406D5072B70615A00DD9AD6 /* Products */,
+				E45B1AF32B74891F001B838D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -326,6 +361,8 @@
 		E45B1ACA2B74806B001B838D /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				E45B1AEE2B74864E001B838D /* Shared UI Helpers */,
+				E45B1AEB2B748609001B838D /* Quiz */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -362,6 +399,7 @@
 			children = (
 				E45B1AD92B748260001B838D /* Text.swift */,
 				E45B1ADB2B748275001B838D /* Text+TabCoordinator.swift */,
+				E45B1AF92B748A3E001B838D /* Text+StartQuizViewController.swift */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -373,6 +411,63 @@
 				E45B1AE02B7483DF001B838D /* ViewController.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		E45B1AEB2B748609001B838D /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				E45B1AFC2B74913E001B838D /* Views */,
+				E45B1AFD2B749142001B838D /* View Models */,
+				E45B1AFB2B749138001B838D /* View Controllers */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
+		E45B1AEE2B74864E001B838D /* Shared UI Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E45B1AF02B748659001B838D /* Composers */,
+			);
+			path = "Shared UI Helpers";
+			sourceTree = "<group>";
+		};
+		E45B1AF02B748659001B838D /* Composers */ = {
+			isa = PBXGroup;
+			children = (
+				E45B1AF12B748666001B838D /* JLPTQuizUIComposer.swift */,
+			);
+			path = Composers;
+			sourceTree = "<group>";
+		};
+		E45B1AF32B74891F001B838D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E45B1AFB2B749138001B838D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E45B1AEC2B748627001B838D /* StartQuizViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E45B1AFC2B74913E001B838D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E45B1B002B74916F001B838D /* StartQuizConfigCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E45B1AFD2B749142001B838D /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				E45B1AFE2B749155001B838D /* StartQuizViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,10 +527,12 @@
 				E45B1A932B747F9C001B838D /* Sources */,
 				E45B1A942B747F9C001B838D /* Frameworks */,
 				E45B1A952B747F9C001B838D /* Resources */,
+				E45B1AF82B74891F001B838D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E45B1AF72B74891F001B838D /* PBXTargetDependency */,
 			);
 			name = JLPTQuizUIKit;
 			packageProductDependencies = (
@@ -585,7 +682,11 @@
 				E45B1AE12B7483DF001B838D /* ViewController.swift in Sources */,
 				E45B1AE82B74842A001B838D /* QuizCoordinator.swift in Sources */,
 				E45B1AD02B748100001B838D /* TabCoordinator.swift in Sources */,
+				E45B1B012B74916F001B838D /* StartQuizConfigCell.swift in Sources */,
 				E45B1ACE2B7480CE001B838D /* AppCoordinator.swift in Sources */,
+				E45B1AFF2B749155001B838D /* StartQuizViewModel.swift in Sources */,
+				E45B1AED2B748627001B838D /* StartQuizViewController.swift in Sources */,
+				E45B1AF22B748666001B838D /* JLPTQuizUIComposer.swift in Sources */,
 				E45B1ADA2B748260001B838D /* Text.swift in Sources */,
 				E45B1AD72B74820C001B838D /* Icon.swift in Sources */,
 				E45B1A9A2B747F9C001B838D /* AppDelegate.swift in Sources */,
@@ -595,6 +696,7 @@
 				E45B1ADC2B748275001B838D /* Text+TabCoordinator.swift in Sources */,
 				E45B1ACC2B748085001B838D /* Coordinator.swift in Sources */,
 				E45B1AE32B7483E3001B838D /* Base.swift in Sources */,
+				E45B1AFA2B748A3E001B838D /* Text+StartQuizViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +720,11 @@
 			isa = PBXTargetDependency;
 			target = E45B1A962B747F9C001B838D /* JLPTQuizUIKit */;
 			targetProxy = E45B1AAD2B747F9D001B838D /* PBXContainerItemProxy */;
+		};
+		E45B1AF72B74891F001B838D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E406D5052B70615A00DD9AD6 /* JLPTQuiz */;
+			targetProxy = E45B1AF62B74891F001B838D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

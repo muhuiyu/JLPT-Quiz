@@ -7,14 +7,14 @@
 
 import Foundation
 
-final class LocalQuizService: QuizService {
+public final class LocalQuizService: QuizService {
     private let jsonFileName: String
     
-    init(jsonFileName: String = "quizzes") {
+    public init(jsonFileName: String = "quizzes") {
         self.jsonFileName = jsonFileName
     }
     
-    func generateSession(filter: QuizFilter? = nil) throws -> Session {
+    public func generateSession(filter: QuizFilter? = nil) throws -> Session {
         guard let url = Bundle(for: type(of: self)).url(forResource: jsonFileName, withExtension: "json") else {
             throw QuizServiceError.missingFile
         }

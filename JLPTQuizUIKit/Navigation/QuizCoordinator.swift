@@ -36,8 +36,7 @@ class QuizCoordinator: QuizCoordinatorProtocol {
     }
     
     func showStartScreen() {
-        let viewController = UIViewController()
-        viewController.view.backgroundColor = .orange
+        let viewController = JLPTQuizUIComposer.makeStartQuizComposedWith(coordinator: self)
         viewController.tabBarItem = tabBarItem
         navigationController.pushViewController(viewController, animated: true)
     }
