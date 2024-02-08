@@ -70,26 +70,6 @@ extension StartQuizViewModel {
 }
 
 extension StartQuizViewModel {
-    struct QuizConfig {
-        var numberOfQuestions: Int
-        var level: QuizLevel
-        var type: QuizType
-        
-        init() {
-            self.numberOfQuestions = 5
-            self.level = .n1
-            self.type = .grammar
-        }
-        
-        func getStringValue(for cellConfigType: CellConfigType) -> String {
-            switch cellConfigType {
-            case .numberOfQuestions: return String(numberOfQuestions)
-            case .level: return level.toText
-            case .type: return type.toText
-            }
-        }
-    }
-    
     struct Choice {
         let wording: String
         let didSelect: () -> Void
@@ -143,6 +123,20 @@ extension QuizType {
         case .kanji: "kanji"
         case .grammar: "grammar"
         case .vocab: "vocabulary"
+        }
+    }
+}
+
+extension QuizConfig {
+    init() {
+        self.init(numberOfQuestions: 5, level: .n1, type: .grammar)
+    }
+    
+    func getStringValue(for cellConfigType: StartQuizViewModel.CellConfigType) -> String {
+        switch cellConfigType {
+        case .numberOfQuestions: return String(numberOfQuestions)
+        case .level: return level.toText
+        case .type: return type.toText
         }
     }
 }

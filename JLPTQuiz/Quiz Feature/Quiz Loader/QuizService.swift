@@ -24,4 +24,10 @@ public struct QuizConfig {
     public var numberOfQuestions: Int
     public var level: QuizLevel
     public var type: QuizType
+    
+    public init(numberOfQuestions: Int, level: QuizLevel, type: QuizType) {
+        self.numberOfQuestions = numberOfQuestions
+        self.level = level
+        self.type = type
+    }
 }
