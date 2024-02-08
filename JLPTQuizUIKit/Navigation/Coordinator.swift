@@ -27,10 +27,6 @@ protocol CoordinatorFinishDelegate: AnyObject {
     func coordinatorDidFinish(childCoordinator: Coordinator)
 }
 
-protocol Coordinating {
-    var coordinator: Coordinator? { get set }
-}
-
 enum CoordinatorType {
     case app, welcome, tab, quiz
 }

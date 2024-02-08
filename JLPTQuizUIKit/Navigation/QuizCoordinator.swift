@@ -37,7 +37,7 @@ class QuizCoordinator: QuizCoordinatorProtocol {
     }
     
     func showStartScreen() {
-        let viewController = JLPTQuizUIComposer.makeStartQuizComposedWith(coordinator: self, didTapStart: { [weak self] config in
+        let viewController = JLPTQuizUIComposer.makeStartQuizComposedWith(startQuizHandler: { [weak self] config in
             self?.showQuizSessionScreen(with: config)
         })
         viewController.tabBarItem = tabBarItem

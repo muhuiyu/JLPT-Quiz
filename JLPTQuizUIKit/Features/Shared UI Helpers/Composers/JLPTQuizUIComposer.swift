@@ -11,12 +11,11 @@ import JLPTQuiz
 final class JLPTQuizUIComposer {
     private init() {}
     
-    static func makeStartQuizComposedWith(coordinator: Coordinator,
-                                          didTapStart: @escaping (QuizConfig) -> Void) -> StartQuizViewController {
+    static func makeStartQuizComposedWith(startQuizHandler: @escaping (QuizConfig) -> Void) -> StartQuizViewController {
         let quizService = LocalQuizService()
-        let viewModel = StartQuizViewModel(coordinator: coordinator, quizService: quizService)
+        let viewModel = StartQuizViewModel(quizService: quizService)
         let viewController = StartQuizViewController(viewModel: viewModel)
-        viewController.didTapStart = didTapStart
+        viewModel.startQuizHandler = startQuizHandler
         return viewController
     }
 }

@@ -51,6 +51,7 @@
 		E45B1AFF2B749155001B838D /* StartQuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AFE2B749155001B838D /* StartQuizViewModel.swift */; };
 		E45B1B012B74916F001B838D /* StartQuizConfigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1B002B74916F001B838D /* StartQuizConfigCell.swift */; };
 		E45B1B032B74AE43001B838D /* Text+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1B022B74AE43001B838D /* Text+Shared.swift */; };
+		E45B1B052B74BFF5001B838D /* QuizSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1B042B74BFF5001B838D /* QuizSessionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		E45B1AFE2B749155001B838D /* StartQuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartQuizViewModel.swift; sourceTree = "<group>"; };
 		E45B1B002B74916F001B838D /* StartQuizConfigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartQuizConfigCell.swift; sourceTree = "<group>"; };
 		E45B1B022B74AE43001B838D /* Text+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Shared.swift"; sourceTree = "<group>"; };
+		E45B1B042B74BFF5001B838D /* QuizSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSessionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -453,6 +455,7 @@
 			isa = PBXGroup;
 			children = (
 				E45B1AEC2B748627001B838D /* StartQuizViewController.swift */,
+				E45B1B042B74BFF5001B838D /* QuizSessionViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E45B1AE12B7483DF001B838D /* ViewController.swift in Sources */,
+				E45B1B052B74BFF5001B838D /* QuizSessionViewController.swift in Sources */,
 				E45B1AE82B74842A001B838D /* QuizCoordinator.swift in Sources */,
 				E45B1AD02B748100001B838D /* TabCoordinator.swift in Sources */,
 				E45B1B012B74916F001B838D /* StartQuizConfigCell.swift in Sources */,

@@ -12,12 +12,18 @@ class StartQuizViewModel: BaseViewModel {
     private(set) var cellConfigs = [CellConfig]()
     @Published private(set) var quizConfig = QuizConfig()
     
-    init(coordinator: Coordinator?, quizService: QuizService) {
+    var startQuizHandler: ((QuizConfig) -> Void)?
+    
+    init(quizService: QuizService) {
         self.quizService = quizService
     }
     
     func setup() {
         setupConfigs()
+    }
+    
+    func didTapStart() {
+        startQuizHandler?(quizConfig)
     }
 }
 

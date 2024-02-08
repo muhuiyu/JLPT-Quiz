@@ -13,8 +13,6 @@ class StartQuizViewController: BaseViewController<StartQuizViewModel> {
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
     private let startButton = UIButton()
     
-    var didTapStart: ((QuizConfig) -> Void)?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -72,8 +70,7 @@ extension StartQuizViewController {
         startButton.backgroundColor = .systemBlue
         startButton.layer.cornerRadius = 12
         startButton.addAction(UIAction(handler: { [weak self] _ in
-            guard let self else { return }
-            self.didTapStart?(self.viewModel.quizConfig)
+            self?.viewModel.didTapStart()
         }), for: .touchUpInside)
         view.addSubview(startButton)
     }
@@ -117,6 +114,6 @@ extension StartQuizViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 #Preview {
-    let viewModel = StartQuizViewModel(coordinator: nil, quizService: LocalQuizService())
+    let viewModel = StartQuizViewModel(quizService: LocalQuizService())
     return StartQuizViewController(viewModel: viewModel).embedInNavigationController()
 }

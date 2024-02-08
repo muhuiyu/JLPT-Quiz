@@ -21,14 +21,8 @@ class BaseViewController<T>: ViewController {
     }
 }
 
-class BaseViewModel: Coordinating {
+class BaseViewModel {
     var subscriptions = Set<AnyCancellable>()
-    
-    var coordinator: Coordinator?
-    
-    init(coordinator: Coordinator? = nil) {
-        self.coordinator = coordinator
-    }
 }
 
 protocol CellProtocol: NSObjectProtocol {
