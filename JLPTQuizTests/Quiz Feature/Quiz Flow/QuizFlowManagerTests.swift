@@ -38,11 +38,11 @@ final class QuizFlowManagerTests: XCTestCase {
     }
     
     func test_selectAnswer_returnCorrectResult_whenSelectingCorrectAnswer() {
-        let flowManager = makeSUTSetupWithTwoQuestionsTwoOptionsAndFirstOptionIsCorrect()
+        let (sut, _, _) = makeSUTSetupWithTwoQuestionsTwoOptionsAndFirstOptionIsCorrect()
         
         do {
-            try flowManager.load()
-            let result = try flowManager.didSelectAnswer(at: 0)
+            try sut.load()
+            let result = try sut.didSelectAnswer(at: 0)
             XCTAssertTrue(result.isCorrect, "Expected to received correct when selecting correct answer")
         } catch {
             XCTFail("Expected success, received \(error) instead")
@@ -50,11 +50,11 @@ final class QuizFlowManagerTests: XCTestCase {
     }
     
     func test_selectAnswer_returnWrongResult_whenSelectingWrongAnswer() {
-        let flowManager = makeSUTSetupWithTwoQuestionsTwoOptionsAndFirstOptionIsCorrect()
+        let (sut, _, _) = makeSUTSetupWithTwoQuestionsTwoOptionsAndFirstOptionIsCorrect()
         
         do {
-            try flowManager.load()
-            let result = try flowManager.didSelectAnswer(at: 1)
+            try sut.load()
+            let result = try sut.didSelectAnswer(at: 1)
             XCTAssertFalse(result.isCorrect, "Expected to received wrong when selecting wrong answer")
         } catch {
             XCTFail("Expected success, received \(error) instead")
@@ -62,21 +62,16 @@ final class QuizFlowManagerTests: XCTestCase {
     }
     
     func test_selectAnswer_shouldMoveToNextQuestionAfterAnswering_whenItIsNotTheLastQuiz() {
-        let correctOption = OptionEntry(value: "correct option", linkedEntryID: "id-1", isAnswer: true)
-        let wrongOption = OptionEntry(value: "wrong option", linkedEntryID: "id-2", isAnswer: false)
-        let quiz1 = makeQuizItem(id: "id-1", options: [correctOption, wrongOption])
-        let quiz2 = makeQuizItem(id: "id-2", options: [correctOption, wrongOption])
-        let service = FakeQuizService(quizList: [quiz1.model, quiz2.model])
-        let flowManager = QuizFlowManager(service: service)
+        let (sut, _, quiz2) = makeSUTSetupWithTwoQuestionsTwoOptionsAndFirstOptionIsCorrect()
         
         do {
-            try flowManager.load()
-            let _ = try flowManager.didSelectAnswer(at: 0)
-            switch flowManager.currentState {
+            try sut.load()
+            let _ = try sut.didSelectAnswer(at: 0)
+            switch sut.currentState {
             case .showingQuiz(let receivedQuiz):
-                XCTAssertEqual(receivedQuiz, quiz2.model, "Expected current quiz to be the second quiz")
+                XCTAssertEqual(receivedQuiz, quiz2, "Expected current quiz to be the second quiz")
             default:
-                XCTFail("Expected showing quiz, received \(flowManager.currentState) instead")
+                XCTFail("Expected showing quiz, received \(sut.currentState) instead")
             }
             
         } catch {
@@ -86,23 +81,23 @@ final class QuizFlowManagerTests: XCTestCase {
 }
 
 extension QuizFlowManagerTests {
-    private func makeSUTSetupWithTwoQuestionsTwoOptionsAndFirstOptionIsCorrect() -> QuizFlowManager {
+    private func makeSUTSetupWithTwoQuestionsTwoOptionsAndFirstOptionIsCorrect() -> (sut: QuizFlowManager, quiz1: Quiz, quiz2: Quiz) {
         let correctOption = OptionEntry(value: "correct option", linkedEntryID: "id-1", isAnswer: true)
         let wrongOption = OptionEntry(value: "wrong option", linkedEntryID: "id-2", isAnswer: false)
         let quiz1 = makeQuizItem(id: "id-1", options: [correctOption, wrongOption])
         let quiz2 = makeQuizItem(id: "id-2", options: [correctOption, wrongOption])
         let service = FakeQuizService(quizList: [quiz1.model, quiz2.model])
         let flowManager = QuizFlowManager(service: service)
-        return flowManager
+        return (flowManager, quiz1.model, quiz2.model)
     }
     
-    private func makeSUTSetupWithOneQuestionTwoOptionsAndFirstOptionIsCorrect() -> QuizFlowManager {
+    private func makeSUTSetupWithOneQuestionTwoOptionsAndFirstOptionIsCorrect() -> (sut: QuizFlowManager, quiz: Quiz) {
         let correctOption = OptionEntry(value: "correct option", linkedEntryID: "id-1", isAnswer: true)
         let wrongOption = OptionEntry(value: "wrong option", linkedEntryID: "id-2", isAnswer: false)
-        let quiz1 = makeQuizItem(id: "id-1", options: [correctOption, wrongOption])
-        let service = FakeQuizService(quizList: [quiz1.model])
+        let quiz = makeQuizItem(id: "id-1", options: [correctOption, wrongOption])
+        let service = FakeQuizService(quizList: [quiz.model])
         let flowManager = QuizFlowManager(service: service)
-        return flowManager
+        return (flowManager, quiz.model)
     }
 }
 
@@ -122,7 +117,7 @@ class FakeQuizService: QuizService {
 class QuizFlowManager {
     let service: QuizService
     
-    enum State {
+    enum State: Equatable {
         case notStarted
         case showingQuiz(Quiz)
         case finished
