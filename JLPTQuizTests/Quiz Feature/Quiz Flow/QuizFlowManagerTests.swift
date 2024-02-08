@@ -137,7 +137,7 @@ class QuizFlowManager {
         case finished
     }
     
-    struct AnswerResult {
+    struct SelectionResult {
         let isCorrect: Bool
         let currentScore: Int
     }
@@ -165,12 +165,12 @@ class QuizFlowManager {
         currentState = .showingQuiz(firstQuestion)
     }
     
-    func didSelectAnswer(at answerIndex: Int) throws -> AnswerResult {
+    func didSelectAnswer(at answerIndex: Int) throws -> SelectionResult {
         switch currentState {
         case .showingQuiz(let currentQuiz):
             let isCorrect = currentQuiz.answerIndex == answerIndex
             updateCurrentScore(didUserChooseCorrectAnswer: isCorrect)
-            let result = AnswerResult(isCorrect: isCorrect, currentScore: currentScore)
+            let result = SelectionResult(isCorrect: isCorrect, currentScore: currentScore)
             updateCurrentState()
             return result
         default:
