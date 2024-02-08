@@ -10,43 +10,28 @@ import XCTest
 
 final class LocalQuizServiceIntegrationTests: XCTestCase {
     
-    func test_generateSession_deliversItems() {
+    func test_generateSession_deliversAllItems() {
         let sut = makeSUT()
         
         do {
             let session = try sut.generateSession()
-            XCTAssertEqual(session.quizList.count, 4)
-            XCTAssertEqual(session.quizList[0], expectedItem(at: 0))
-            XCTAssertEqual(session.quizList[1], expectedItem(at: 1))
-            XCTAssertEqual(session.quizList[2], expectedItem(at: 2))
-            XCTAssertEqual(session.quizList[3], expectedItem(at: 3))
+            XCTAssertEqual(session.quizList.count, 30)
+            for i in 0..<30 {
+                XCTAssertEqual(session.quizList[i], expectedItem(at: i))
+            }
         } catch {
             XCTFail("Expected to load quizzes successfully, received \(error) instead")
         }
     }
     
-    func test_generateSession_deliversFilteredItemsWhenFilteringType() {
+    func test_generateSession_deliversFilteredItemsWhenFiltering() {
         let sut = makeSUT()
-        let filter = QuizConfig(numberOfQuestions: 1, type: .grammar)
+        let filter = QuizConfig(numberOfQuestions: 1, level: .n1, type: .grammar)
         
         do {
             let session = try sut.generateSession(filter: filter)
             XCTAssertEqual(session.quizList.count, 1)
             XCTAssertEqual(session.quizList[0], expectedItem(at: 0))
-        } catch {
-            XCTFail("Expected to load filtered quizzes, received \(error) instead")
-        }
-    }
-    
-    func test_generateSession_deliversFilteredItemsWhenFilteringLevel() {
-        let sut = makeSUT()
-        let filter = QuizConfig(numberOfQuestions: 2, level: .n5)
-        
-        do {
-            let session = try sut.generateSession(filter: filter)
-            XCTAssertEqual(session.quizList.count, 2)
-            XCTAssertEqual(session.quizList[0], expectedItem(at: 2))
-            XCTAssertEqual(session.quizList[1], expectedItem(at: 3))
         } catch {
             XCTFail("Expected to load filtered quizzes, received \(error) instead")
         }
@@ -71,40 +56,39 @@ extension LocalQuizServiceIntegrationTests {
     }
     
     private func id(at index: Int) -> String {
-        return ["id-1", "id-2", "id-3", "id-4"][index]
+        return "id-\(index + 1)"
     }
     
     private func type(at index: Int) -> QuizType {
-        return [.grammar, .kanji, .vocab, .vocab][index]
+        if index < 10 {
+            return .grammar
+        } else if index < 20 {
+            return .kanji
+        } else {
+            return .vocab
+        }
     }
     
     private func level(at index: Int) -> QuizLevel {
-        return [.n1, .n3, .n5, .n5][index]
+        switch index % 10 {
+        case 0, 1: return .n1
+        case 2, 3: return .n2
+        case 4, 5: return .n3
+        case 6, 7: return .n4
+        case 8, 9: return .n5
+        default:
+            fatalError("Invalid result: index % 10 should be in the range 0..<10")
+        }
     }
     
     private func question(at index: Int) -> String {
-        return ["question-1", "question-2", "question-3", "question-4"][index]
+        return "question-\(index + 1)"
     }
     
     private func options(at index: Int) -> [OptionEntry] {
         return [
-            [
-                OptionEntry(value: "question-1/option-1", linkedEntryID: "linkedEntry-1", isAnswer: true)
-            ],
-            [
-                OptionEntry(value: "question-2/option-1", linkedEntryID: "linkedEntry-2", isAnswer: true),
-                OptionEntry(value: "question-2/option-2", linkedEntryID: "linkedEntry-3", isAnswer: false)
-            ],
-            [
-                OptionEntry(value: "question-3/option-1", linkedEntryID: "linkedEntry-4", isAnswer: true),
-                OptionEntry(value: "question-3/option-2", linkedEntryID: "linkedEntry-5", isAnswer: false),
-                OptionEntry(value: "question-3/option-3", linkedEntryID: "linkedEntry-6", isAnswer: false)
-            ],
-            [
-                OptionEntry(value: "question-4/option-1", linkedEntryID: "linkedEntry-7", isAnswer: true),
-                OptionEntry(value: "question-4/option-2", linkedEntryID: "linkedEntry-8", isAnswer: false),
-                OptionEntry(value: "question-4/option-3", linkedEntryID: "linkedEntry-9", isAnswer: false)
-            ],
-        ][index]
+            OptionEntry(value: "question-\(index + 1)/option-1", linkedEntryID: "linkedEntry-1", isAnswer: true),
+            OptionEntry(value: "question-\(index + 1)/option-2", linkedEntryID: "linkedEntry-2", isAnswer: false),
+        ]
     }
 }

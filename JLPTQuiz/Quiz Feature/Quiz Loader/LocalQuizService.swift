@@ -33,21 +33,13 @@ public final class LocalQuizService: QuizService {
         return Session(quizList: filteredQuizzes)
     }
     
-    private func filterQuizzes(_ quizzes: [Quiz], with filter: QuizConfig?) -> [Quiz] {
-        guard let filter else { return quizzes }
+    private func filterQuizzes(_ quizzes: [Quiz], with config: QuizConfig?) -> [Quiz] {
+        guard let config else { return quizzes }
         
-        return quizzes
-            .filter { item in
-                guard let type = filter.type else {
-                    return true
-                }
-                return item.type == type
-            }
-            .filter { item in
-                guard let level = filter.level else {
-                    return true
-                }
-                return item.level == level
-            }
+        return Array(quizzes
+            .filter { $0.type == config.type }
+            .filter { $0.level == config.level }
+            .prefix(config.numberOfQuestions)
+        )
     }
 }

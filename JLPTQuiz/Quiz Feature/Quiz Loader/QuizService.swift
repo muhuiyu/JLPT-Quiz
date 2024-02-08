@@ -22,6 +22,6 @@ public struct Session {
 
 public struct QuizConfig {
     public var numberOfQuestions: Int
-    public var level: QuizLevel?
-    public var type: QuizType?
+    public var level: QuizLevel
+    public var type: QuizType
 }
