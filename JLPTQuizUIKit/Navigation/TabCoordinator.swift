@@ -46,10 +46,11 @@ extension TabCoordinator {
     private func makeViewController(for tab: TabBarPage) -> UIViewController {
         switch tab {
         case .quiz:
-            let viewController = UIViewController()
-            viewController.view.backgroundColor = .orange
-            viewController.tabBarItem = tab.tabBarItem
-            return viewController
+            let (coordinator, navigationController) = CoordinatorFactory.makeQuizCoordinator(tabBarItem: tab.tabBarItem)
+            coordinator.finishDelegate = self
+            childCoordinators.append(coordinator)
+            coordinator.start()
+            return navigationController
         }
     }
     
@@ -64,36 +65,3 @@ extension TabCoordinator: CoordinatorFinishDelegate {
         childCoordinators = childCoordinators.filter { $0.type != childCoordinator.type }
     }
 }
-
-enum TabBarPage: Int, CaseIterable {
-    case quiz = 0
-    
-    var order: Int {
-        return self.rawValue
-    }
-    
-    var title: String {
-        switch self {
-        case .quiz: return Text.tabQuiz
-        }
-    }
-    
-    var image: UIImage? {
-        let imageName = switch self {
-        case .quiz: Icon.QuizTab.inactive
-        }
-        return UIImage(systemName: imageName)
-    }
-    
-    var selectedImage: UIImage? {
-        let imageName = switch self {
-        case .quiz: Icon.QuizTab.active
-        }
-        return UIImage(systemName: imageName)
-    }
-    
-    var tabBarItem: UITabBarItem {
-        return UITabBarItem(title: self.title, image: self.image, selectedImage: self.selectedImage)
-    }
-}
-

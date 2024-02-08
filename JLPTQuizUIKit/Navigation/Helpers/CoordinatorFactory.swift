@@ -13,4 +13,10 @@ class CoordinatorFactory {
         let tabCoordinator = TabCoordinator(navigationController)
         return (AppCoordinator(navigationController, tabCoordinator: tabCoordinator), navigationController)
     }
+    
+    static func makeQuizCoordinator(tabBarItem: UITabBarItem) -> (coordinator: QuizCoordinator, navigationController: UINavigationController) {
+        let navigationController = UINavigationController()
+        let coordinator = QuizCoordinator(navigationController, tabBarItem: tabBarItem)
+        return (coordinator, navigationController)
+    }
 }

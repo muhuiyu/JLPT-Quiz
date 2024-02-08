@@ -41,6 +41,8 @@
 		E45B1AE12B7483DF001B838D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AE02B7483DF001B838D /* ViewController.swift */; };
 		E45B1AE32B7483E3001B838D /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AE22B7483E3001B838D /* Base.swift */; };
 		E45B1AE62B7483FF001B838D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E45B1AE52B7483FE001B838D /* SnapKit */; };
+		E45B1AE82B74842A001B838D /* QuizCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AE72B74842A001B838D /* QuizCoordinator.swift */; };
+		E45B1AEA2B748541001B838D /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AE92B748541001B838D /* TabBarPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,8 @@
 		E45B1ADB2B748275001B838D /* Text+TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+TabCoordinator.swift"; sourceTree = "<group>"; };
 		E45B1AE02B7483DF001B838D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E45B1AE22B7483E3001B838D /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		E45B1AE72B74842A001B838D /* QuizCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCoordinator.swift; sourceTree = "<group>"; };
+		E45B1AE92B748541001B838D /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +318,7 @@
 				E45B1ACB2B748085001B838D /* Coordinator.swift */,
 				E45B1ACD2B7480CE001B838D /* AppCoordinator.swift */,
 				E45B1ACF2B748100001B838D /* TabCoordinator.swift */,
+				E45B1AE72B74842A001B838D /* QuizCoordinator.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -329,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				E45B1AD22B7481AA001B838D /* CoordinatorFactory.swift */,
+				E45B1AE92B748541001B838D /* TabBarPage.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -577,11 +583,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E45B1AE12B7483DF001B838D /* ViewController.swift in Sources */,
+				E45B1AE82B74842A001B838D /* QuizCoordinator.swift in Sources */,
 				E45B1AD02B748100001B838D /* TabCoordinator.swift in Sources */,
 				E45B1ACE2B7480CE001B838D /* AppCoordinator.swift in Sources */,
 				E45B1ADA2B748260001B838D /* Text.swift in Sources */,
 				E45B1AD72B74820C001B838D /* Icon.swift in Sources */,
 				E45B1A9A2B747F9C001B838D /* AppDelegate.swift in Sources */,
+				E45B1AEA2B748541001B838D /* TabBarPage.swift in Sources */,
 				E45B1AD32B7481AA001B838D /* CoordinatorFactory.swift in Sources */,
 				E45B1A9C2B747F9C001B838D /* SceneDelegate.swift in Sources */,
 				E45B1ADC2B748275001B838D /* Text+TabCoordinator.swift in Sources */,
