@@ -43,7 +43,8 @@ final class QuizFlowManagerTests: XCTestCase {
         do {
             try sut.load()
             let result = try sut.didSelectAnswer(at: 0)
-            XCTAssertTrue(result.isCorrect, "Expected to received correct when selecting correct answer")
+            XCTAssertTrue(result.isCorrect, "Expected to receive correct when selecting correct answer")
+            XCTAssertEqual(result.currentScore, 1, "Expected score to be 1, received \(result.currentScore) instead")
         } catch {
             XCTFail("Expected success, received \(error) instead")
         }
@@ -55,7 +56,8 @@ final class QuizFlowManagerTests: XCTestCase {
         do {
             try sut.load()
             let result = try sut.didSelectAnswer(at: 1)
-            XCTAssertFalse(result.isCorrect, "Expected to received wrong when selecting wrong answer")
+            XCTAssertFalse(result.isCorrect, "Expected to receive wrong when selecting wrong answer")
+            XCTAssertEqual(result.currentScore, 0, "Expected score to be 0, received \(result.currentScore) instead")
         } catch {
             XCTFail("Expected success, received \(error) instead")
         }
@@ -137,10 +139,12 @@ class QuizFlowManager {
     
     struct AnswerResult {
         let isCorrect: Bool
+        let currentScore: Int
     }
     
     @Published var currentState: State = .notStarted
-    private var currentIndex = 0
+    private var currentScore = 0
+    private(set) var currentIndex = 0
     private var quizList = [Quiz]()
     
     init(service: QuizService) {
@@ -164,18 +168,34 @@ class QuizFlowManager {
     func didSelectAnswer(at answerIndex: Int) throws -> AnswerResult {
         switch currentState {
         case .showingQuiz(let currentQuiz):
-            let correctIndex = currentQuiz.options.firstIndex(where: { $0.isAnswer })
-            let result = AnswerResult(isCorrect: correctIndex == answerIndex)
-            if currentIndex < quizList.count - 1 {
-                currentIndex += 1
-                currentState = .showingQuiz(quizList[currentIndex])
-            } else {
-                currentState = .finished
-            }
+            let isCorrect = currentQuiz.answerIndex == answerIndex
+            updateCurrentScore(didUserChooseCorrectAnswer: isCorrect)
+            let result = AnswerResult(isCorrect: isCorrect, currentScore: currentScore)
+            updateCurrentState()
             return result
         default:
             throw Error.invalidAction
         }
     }
+    
+    private func updateCurrentScore(didUserChooseCorrectAnswer isCorrect: Bool) {
+        if isCorrect {
+            currentScore += 1
+        }
+    }
+    
+    private func updateCurrentState() {
+        if currentIndex < quizList.count - 1 {
+            currentIndex += 1
+            currentState = .showingQuiz(quizList[currentIndex])
+        } else {
+            currentState = .finished
+        }
+    }
 }
 
+extension Quiz {
+    var answerIndex: Int? {
+        options.firstIndex(where: { $0.isAnswer })
+    }
+}
