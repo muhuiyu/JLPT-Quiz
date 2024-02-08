@@ -78,6 +78,18 @@ final class QuizFlowManagerTests: XCTestCase {
             XCTFail("Expected success, received \(error) instead")
         }
     }
+    
+    func test_selectAnswer_shouldEndSession_whenItIsTheLastQuiz() {
+        let (sut, _) = makeSUTSetupWithOneQuestionTwoOptionsAndFirstOptionIsCorrect()
+        
+        do {
+            try sut.load()
+            let _ = try sut.didSelectAnswer(at: 0)
+            XCTAssertEqual(sut.currentState, .finished, "Expected to finish quiz, received \(sut.currentState) instead")
+        } catch {
+            XCTFail("Expected success, received \(error) instead")
+        }
+    }
 }
 
 extension QuizFlowManagerTests {
