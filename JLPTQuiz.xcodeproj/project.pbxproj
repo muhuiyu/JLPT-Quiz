@@ -24,6 +24,8 @@
 		E406D5412B709A3500DD9AD6 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D5402B709A3500DD9AD6 /* XCTestCase+MemoryLeakTracking.swift */; };
 		E45B1A732B738538001B838D /* XCTestCase+QuizFeatureHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1A722B738538001B838D /* XCTestCase+QuizFeatureHelpers.swift */; };
 		E45B1A752B73861A001B838D /* QuizFlowManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1A742B73861A001B838D /* QuizFlowManagerTests.swift */; };
+		E45B1A782B747EF7001B838D /* QuizFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1A772B747EF7001B838D /* QuizFlowManager.swift */; };
+		E45B1A7A2B747F15001B838D /* QuizFlowManagerTests+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1A792B747F15001B838D /* QuizFlowManagerTests+Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		E406D5402B709A3500DD9AD6 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		E45B1A722B738538001B838D /* XCTestCase+QuizFeatureHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+QuizFeatureHelpers.swift"; sourceTree = "<group>"; };
 		E45B1A742B73861A001B838D /* QuizFlowManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizFlowManagerTests.swift; sourceTree = "<group>"; };
+		E45B1A772B747EF7001B838D /* QuizFlowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizFlowManager.swift; sourceTree = "<group>"; };
+		E45B1A792B747F15001B838D /* QuizFlowManagerTests+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizFlowManagerTests+Helpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 			children = (
 				E406D52E2B706A6E00DD9AD6 /* Models */,
 				E406D5292B7066AA00DD9AD6 /* Quiz Loader */,
+				E45B1A762B747EE3001B838D /* Quiz Flow */,
 			);
 			path = "Quiz Feature";
 			sourceTree = "<group>";
@@ -198,6 +203,15 @@
 			isa = PBXGroup;
 			children = (
 				E45B1A742B73861A001B838D /* QuizFlowManagerTests.swift */,
+				E45B1A792B747F15001B838D /* QuizFlowManagerTests+Helpers.swift */,
+			);
+			path = "Quiz Flow";
+			sourceTree = "<group>";
+		};
+		E45B1A762B747EE3001B838D /* Quiz Flow */ = {
+			isa = PBXGroup;
+			children = (
+				E45B1A772B747EF7001B838D /* QuizFlowManager.swift */,
 			);
 			path = "Quiz Flow";
 			sourceTree = "<group>";
@@ -322,6 +336,7 @@
 				E406D52D2B706A2100DD9AD6 /* LocalQuizMapper.swift in Sources */,
 				E406D5342B708EDB00DD9AD6 /* LocalQuizService.swift in Sources */,
 				E406D5302B706A8000DD9AD6 /* Quiz.swift in Sources */,
+				E45B1A782B747EF7001B838D /* QuizFlowManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +346,7 @@
 			files = (
 				E45B1A752B73861A001B838D /* QuizFlowManagerTests.swift in Sources */,
 				E45B1A732B738538001B838D /* XCTestCase+QuizFeatureHelpers.swift in Sources */,
+				E45B1A7A2B747F15001B838D /* QuizFlowManagerTests+Helpers.swift in Sources */,
 				E406D5142B70615A00DD9AD6 /* LocalQuizMapperTests.swift in Sources */,
 				E406D5372B7091F600DD9AD6 /* LocalQuizServiceIntegrationTests.swift in Sources */,
 				E406D5412B709A3500DD9AD6 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
