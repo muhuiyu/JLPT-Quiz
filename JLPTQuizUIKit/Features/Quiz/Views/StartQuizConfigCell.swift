@@ -24,13 +24,6 @@ class StartQuizConfigCell: TableViewCell {
         }
     }
     
-    var choices: [Choice] = []
-    
-    struct Choice {
-        let wording: String
-        let didSelect: () -> Void
-    }
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureViews()

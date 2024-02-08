@@ -50,6 +50,7 @@
 		E45B1AFA2B748A3E001B838D /* Text+StartQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AF92B748A3E001B838D /* Text+StartQuizViewController.swift */; };
 		E45B1AFF2B749155001B838D /* StartQuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1AFE2B749155001B838D /* StartQuizViewModel.swift */; };
 		E45B1B012B74916F001B838D /* StartQuizConfigCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1B002B74916F001B838D /* StartQuizConfigCell.swift */; };
+		E45B1B032B74AE43001B838D /* Text+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1B022B74AE43001B838D /* Text+Shared.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		E45B1AF92B748A3E001B838D /* Text+StartQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+StartQuizViewController.swift"; sourceTree = "<group>"; };
 		E45B1AFE2B749155001B838D /* StartQuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartQuizViewModel.swift; sourceTree = "<group>"; };
 		E45B1B002B74916F001B838D /* StartQuizConfigCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartQuizConfigCell.swift; sourceTree = "<group>"; };
+		E45B1B022B74AE43001B838D /* Text+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Shared.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -398,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				E45B1AD92B748260001B838D /* Text.swift */,
+				E45B1B022B74AE43001B838D /* Text+Shared.swift */,
 				E45B1ADB2B748275001B838D /* Text+TabBarPage.swift */,
 				E45B1AF92B748A3E001B838D /* Text+StartQuizViewController.swift */,
 			);
@@ -685,6 +688,7 @@
 				E45B1B012B74916F001B838D /* StartQuizConfigCell.swift in Sources */,
 				E45B1ACE2B7480CE001B838D /* AppCoordinator.swift in Sources */,
 				E45B1AFF2B749155001B838D /* StartQuizViewModel.swift in Sources */,
+				E45B1B032B74AE43001B838D /* Text+Shared.swift in Sources */,
 				E45B1AED2B748627001B838D /* StartQuizViewController.swift in Sources */,
 				E45B1AF22B748666001B838D /* JLPTQuizUIComposer.swift in Sources */,
 				E45B1ADA2B748260001B838D /* Text.swift in Sources */,

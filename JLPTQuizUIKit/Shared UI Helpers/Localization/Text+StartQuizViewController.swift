@@ -6,7 +6,7 @@
 //
 
 extension Text {
-    struct startQuizViewController {
+    struct StartQuizViewController {
         static let title = "JLPT Quiz"
         static let startButtonTitle = "Start"
         static let numberOfQuestions = "Number of questions"

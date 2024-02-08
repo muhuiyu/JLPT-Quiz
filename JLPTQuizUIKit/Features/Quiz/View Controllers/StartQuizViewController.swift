@@ -17,6 +17,9 @@ class StartQuizViewController: BaseViewController<StartQuizViewModel> {
         super.viewDidLoad()
         configureViews()
         configureConstraints()
+        configureBindings()
+        
+        viewModel.setup()
     }
 }
 
@@ -24,7 +27,7 @@ class StartQuizViewController: BaseViewController<StartQuizViewModel> {
 extension StartQuizViewController {
     
     private func configureViews() {
-        title = Text.startQuizViewController.title
+        title = Text.StartQuizViewController.title
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemGroupedBackground
         
@@ -33,7 +36,7 @@ extension StartQuizViewController {
         tableView.register(StartQuizConfigCell.self, forCellReuseIdentifier: StartQuizConfigCell.reuseID)
         view.addSubview(tableView)
         
-        startButton.setTitle(Text.startQuizViewController.startButtonTitle, for: .normal)
+        startButton.setTitle(Text.StartQuizViewController.startButtonTitle, for: .normal)
         startButton.setTitleColor(.white, for: .normal)
         startButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
         startButton.backgroundColor = .systemBlue
@@ -53,41 +56,51 @@ extension StartQuizViewController {
         }
     }
     
+    private func configureBindings() {
+        viewModel.$quizConfig
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.tableView.reloadData()
+            }
+            .store(in: &subscriptions)
+    }
 }
 
 // MARK: - TableView DataSource and Delegate
 extension StartQuizViewController: UITableViewDataSource, UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return viewModel.cellConfigs.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: StartQuizConfigCell.reuseID, for: indexPath) as? StartQuizConfigCell else {
              return UITableViewCell()
         }
         
-        switch indexPath.row {
-        case 0:
-            cell.label = Text.startQuizViewController.numberOfQuestions
-            cell.value = String(viewModel.config.numberOfQuestions)
-        case 1:
-            cell.label = Text.startQuizViewController.level
-            cell.value = viewModel.config.level.toText
-        case 2:
-            cell.label = Text.startQuizViewController.type
-            cell.value = viewModel.config.type.toText
-        default:
-            return UITableViewCell()
-        }
-        
+        let cellConfig = viewModel.cellConfigs[indexPath.row]
+        cell.label = cellConfig.label
+        cell.value = viewModel.quizConfig.getStringValue(for: cellConfig.type)
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer {
             tableView.deselectRow(at: indexPath, animated: true)
         }
-        print(indexPath)
+        presentActionSheet(for: viewModel.cellConfigs[indexPath.row])
     }
     
+    private func presentActionSheet(for cellConfig: StartQuizViewModel.CellConfig) {
+        let alert = UIAlertController(title: cellConfig.type.alertTitle, message: nil, preferredStyle: .actionSheet)
+        cellConfig.choices.forEach { choice in
+            alert.addAction(UIAlertAction(title: choice.wording, style: .default, handler: { _ in
+                choice.didSelect()
+            }))
+        }
+        alert.addAction(UIAlertAction(title: Text.Shared.cancel, style: .cancel))
+        present(alert, animated: true)
+    }
 }
 
 #Preview {
