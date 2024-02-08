@@ -26,7 +26,46 @@ final class QuizFlowManagerTests: XCTestCase {
         
         do {
             try flowManager.load()
-            XCTAssertEqual(flowManager.currentQuiz, quiz1.model, "Expected current quiz to be the same as the first quiz in list")
+            switch flowManager.currentState {
+            case .showingQuiz(let receivedQuiz):
+                XCTAssertEqual(receivedQuiz, quiz1.model, "Expected current quiz to be the same as the first quiz in list")
+            default:
+                XCTFail("Expected showing quiz, received \(flowManager.currentState) instead")
+            }
+        } catch {
+            XCTFail("Expected success, received \(error) instead")
+        }
+    }
+    
+    func test_selectAnswer_returnCorrectResult_whenSelectingCorrectAnswer() {
+        let correctOption = OptionEntry(value: "correct option", linkedEntryID: "id-1", isAnswer: true)
+        let wrongOption = OptionEntry(value: "wrong option", linkedEntryID: "id-2", isAnswer: false)
+        let quiz1 = makeQuizItem(id: "id-1", options: [correctOption, wrongOption])
+        let quiz2 = makeQuizItem(id: "id-2", options: [correctOption, wrongOption])
+        let service = FakeQuizService(quizList: [quiz1.model, quiz2.model])
+        let flowManager = QuizFlowManager(service: service)
+        
+        do {
+            try flowManager.load()
+            let result = try flowManager.didSelectAnswer(at: 0)
+            XCTAssertTrue(result.isCorrect, "Expected to received correct when selecting correct answer")
+        } catch {
+            XCTFail("Expected success, received \(error) instead")
+        }
+    }
+    
+    func test_selectAnswer_returnWrongResult_whenSelectingWrongAnswer() {
+        let correctOption = OptionEntry(value: "correct option", linkedEntryID: "id-1", isAnswer: true)
+        let wrongOption = OptionEntry(value: "wrong option", linkedEntryID: "id-2", isAnswer: false)
+        let quiz1 = makeQuizItem(id: "id-1", options: [correctOption, wrongOption])
+        let quiz2 = makeQuizItem(id: "id-2", options: [correctOption, wrongOption])
+        let service = FakeQuizService(quizList: [quiz1.model, quiz2.model])
+        let flowManager = QuizFlowManager(service: service)
+        
+        do {
+            try flowManager.load()
+            let result = try flowManager.didSelectAnswer(at: 1)
+            XCTAssertFalse(result.isCorrect, "Expected to received wrong when selecting wrong answer")
         } catch {
             XCTFail("Expected success, received \(error) instead")
         }
@@ -49,7 +88,18 @@ class FakeQuizService: QuizService {
 class QuizFlowManager {
     let service: QuizService
     
-    @Published var currentQuiz: Quiz?
+    enum State {
+        case notStarted
+        case showingQuiz(Quiz)
+        case finished
+    }
+    
+    struct AnswerResult {
+        let isCorrect: Bool
+    }
+    
+    @Published var currentState: State = .notStarted
+    private var currentIndex = 0
     private var quizList = [Quiz]()
     
     init(service: QuizService) {
@@ -58,15 +108,33 @@ class QuizFlowManager {
     
     enum Error: Swift.Error {
         case emptyQuizList
+        case invalidAction
     }
     
     func load() throws {
         let session = try service.generateSession(filter: nil)
-        guard !session.quizList.isEmpty else {
+        guard let firstQuestion = session.quizList.first else {
             throw Error.emptyQuizList
         }
         quizList = session.quizList
-        currentQuiz = quizList.first
+        currentState = .showingQuiz(firstQuestion)
+    }
+    
+    func didSelectAnswer(at answerIndex: Int) throws -> AnswerResult {
+        switch currentState {
+        case .showingQuiz(let currentQuiz):
+            let correctIndex = currentQuiz.options.firstIndex(where: { $0.isAnswer })
+            let result = AnswerResult(isCorrect: correctIndex == answerIndex)
+            if currentIndex < quizList.count - 1 {
+                currentIndex += 1
+                currentState = .showingQuiz(quizList[currentIndex])
+            } else {
+                currentState = .finished
+            }
+            return result
+        default:
+            throw Error.invalidAction
+        }
     }
 }
 
