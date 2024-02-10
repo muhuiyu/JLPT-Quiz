@@ -10,7 +10,7 @@ import UIKit
 class SessionHeaderView: UIView {
     private let progressBar = ProgressBarView(frame: .zero, percentage: 0)
     private let titleLabel = UILabel()
-    private let dismissButton = UIButton(type: .close)
+    private let dismissButton = UIButton()
     
     var title: String? {
         didSet {
@@ -36,10 +36,12 @@ class SessionHeaderView: UIView {
         super.init(frame: .zero)
         
         titleLabel.text = "default"
-        titleLabel.font = .systemFont(ofSize: 18)
+        titleLabel.font = .systemFont(ofSize: 14)
         titleLabel.textColor = UIColor.secondaryLabel
         addSubview(titleLabel)
         addSubview(progressBar)
+        
+        dismissButton.setImage(UIImage(systemName: Icon.Shared.close), for: .normal)
         addSubview(dismissButton)
         
         progressBar.snp.remakeConstraints { make in
@@ -48,7 +50,7 @@ class SessionHeaderView: UIView {
         
         titleLabel.snp.remakeConstraints { make in
             make.center.equalTo(dismissButton)
-            make.leading.equalTo(progressBar).inset(12)
+            make.leading.equalTo(progressBar)
             make.bottom.equalToSuperview()
         }
         

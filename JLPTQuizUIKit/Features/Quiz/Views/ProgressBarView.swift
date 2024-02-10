@@ -51,9 +51,9 @@ extension ProgressBarView {
 // MARK: - View Config
 extension ProgressBarView {
     private func configureViews() {
-        activeView.layer.cornerRadius = 12
+        activeView.layer.cornerRadius = 4
         activeView.backgroundColor = .blue
-        backgroundView.layer.cornerRadius = 12
+        backgroundView.layer.cornerRadius = 4
         backgroundView.addSubview(activeView)
         backgroundView.backgroundColor = UIColor.tertiarySystemGroupedBackground
         addSubview(backgroundView)
@@ -64,7 +64,7 @@ extension ProgressBarView {
             make.width.equalToSuperview().multipliedBy(percentage)
         }
         backgroundView.snp.remakeConstraints { make in
-            make.height.equalTo(18)
+            make.height.equalTo(8)
             make.edges.equalToSuperview()
         }
     }
