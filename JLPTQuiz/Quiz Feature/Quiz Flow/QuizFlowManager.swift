@@ -14,7 +14,7 @@ public class QuizFlowManager {
         case notStarted
         case showingQuiz(Quiz)
         case showingAnswer(Quiz)
-        case finished
+        case ended
     }
     
     public struct SelectionResult {
@@ -89,7 +89,7 @@ public class QuizFlowManager {
             currentIndex += 1
             currentState = .showingQuiz(quizList[currentIndex])
         } else {
-            currentState = .finished
+            currentState = .ended
         }
     }
 }

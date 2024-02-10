@@ -125,8 +125,7 @@ extension QuizSessionViewController {
 //                    self?.configureData(for: state)
 //                case .sessionSummaryPresented:
 //                    self?.presentSessionSummaryAlert()
-                case .finished:
-//                case .ended:
+                case .ended:
                     self?.dismiss(animated: true)
                 default:
                     break

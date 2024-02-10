@@ -108,7 +108,7 @@ final class QuizFlowManagerTests: XCTestCase {
             try sut.load()
             let _ = try sut.didSelectAnswer(at: 0)
             try sut.didTapNext()
-            XCTAssertEqual(sut.currentState, .finished, "Expected to finish quiz, received \(sut.currentState) instead")
+            XCTAssertEqual(sut.currentState, .ended, "Expected to finish quiz, received \(sut.currentState) instead")
         } catch {
             XCTFail("Expected success, received \(error) instead")
         }
