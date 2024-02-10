@@ -22,7 +22,7 @@ class OptionCell: UITableViewCell {
         }
     }
     
-    var state: State = .unselectedWithoutAnswerRevealed {
+    var state: State = .unselected {
         didSet {
             reconfigureViews(for: state)
         }
@@ -43,18 +43,17 @@ class OptionCell: UITableViewCell {
 extension OptionCell {
     
     enum State {
-        case unselectedWithoutAnswerRevealed    // default
-        case correctAnswerSelected
-        case wrongAnswerSelected
-        case unselectedWithAnswerRevealed
+        case unanswered
+        case unselected
+        case correctAnswer
+        case selectedWrongly
         
         var canShowLinkedEntry: Bool {
-            return self != .unselectedWithoutAnswerRevealed
+            return self != .unanswered
         }
     }
     
     private func configureViews() {
-        titleLabel.text = "default"
         titleLabel.textColor = UIColor.label
         titleLabel.font = .systemFont(ofSize: 17)
         titleLabel.numberOfLines = 0
@@ -64,12 +63,12 @@ extension OptionCell {
         buttonLabel.isUserInteractionEnabled = true
         buttonLabel.font = .systemFont(ofSize: 12)
         buttonLabel.textColor = UIColor.label
-        buttonLabel.text = "View more"
+        buttonLabel.text = Text.QuizSessionViewController.viewMoreButton
         buttonLabel.isHidden = true
         containerView.addSubview(buttonLabel)
         
         containerView.layer.cornerRadius = 12
-        containerView.backgroundColor = UIColor.secondarySystemBackground
+        containerView.backgroundColor = .secondarySystemBackground
         contentView.addSubview(containerView)
         
         selectionStyle = .none
@@ -82,26 +81,25 @@ extension OptionCell {
     
     private func reconfigureViews(for state: State) {
         switch state {
-        case .correctAnswerSelected:
+        case .correctAnswer:
             containerView.backgroundColor = .green
-        case .wrongAnswerSelected:
+        case .selectedWrongly:
             containerView.backgroundColor = .red
         default:
-            containerView.backgroundColor = UIColor.secondarySystemBackground
+            containerView.backgroundColor = .secondarySystemBackground
         }
         buttonLabel.isHidden = shouldHideButtonLabel
     }
     
     private func configureConstraints() {
         titleLabel.snp.remakeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(12)
+            make.top.bottom.equalToSuperview().inset(16)
             make.centerY.equalToSuperview()
             make.leading.equalToSuperview().inset(18)
             make.trailing.equalTo(buttonLabel.snp.leading).offset(-12)
         }
         buttonLabel.snp.remakeConstraints { make in
             make.trailing.equalToSuperview().inset(18)
-            make.leading.greaterThanOrEqualTo(titleLabel.snp.trailing).offset(-18)
             make.centerY.equalTo(titleLabel)
         }
         
