@@ -9,8 +9,8 @@
 
 extension QuizFlowManagerTests {
     func makeSUTSetupWithTwoQuestionsTwoOptionsAndFirstOptionIsCorrect() -> (sut: QuizFlowManager, quiz1: Quiz, quiz2: Quiz) {
-        let correctOption = OptionEntry(value: "correct option", linkedEntryID: "id-1", isAnswer: true)
-        let wrongOption = OptionEntry(value: "wrong option", linkedEntryID: "id-2", isAnswer: false)
+        let correctOption = QuizOptionEntry(wording: "correct option", linkedEntryID: "id-1", isAnswer: true)
+        let wrongOption = QuizOptionEntry(wording: "wrong option", linkedEntryID: "id-2", isAnswer: false)
         let quiz1 = makeQuizItem(id: "id-1", options: [correctOption, wrongOption])
         let quiz2 = makeQuizItem(id: "id-2", options: [correctOption, wrongOption])
         let service = FakeQuizService(quizList: [quiz1.model, quiz2.model])
@@ -19,8 +19,8 @@ extension QuizFlowManagerTests {
     }
     
     func makeSUTSetupWithOneQuestionTwoOptionsAndFirstOptionIsCorrect() -> (sut: QuizFlowManager, quiz: Quiz) {
-        let correctOption = OptionEntry(value: "correct option", linkedEntryID: "id-1", isAnswer: true)
-        let wrongOption = OptionEntry(value: "wrong option", linkedEntryID: "id-2", isAnswer: false)
+        let correctOption = QuizOptionEntry(wording: "correct option", linkedEntryID: "id-1", isAnswer: true)
+        let wrongOption = QuizOptionEntry(wording: "wrong option", linkedEntryID: "id-2", isAnswer: false)
         let quiz = makeQuizItem(id: "id-1", options: [correctOption, wrongOption])
         let service = FakeQuizService(quizList: [quiz.model])
         let flowManager = QuizFlowManager(service: service)

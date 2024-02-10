@@ -14,7 +14,7 @@ extension XCTestCase {
         type: QuizType = .grammar,
         level: QuizLevel = .n1,
         question: String = "any question",
-        options: [OptionEntry] = []
+        options: [QuizOptionEntry] = []
     ) -> (model: Quiz, json: [String: Any]) {
         let model = Quiz(
             id: id,
@@ -34,9 +34,9 @@ extension XCTestCase {
         return (model, json)
     }
     
-    func makeOptionJSON(_ option: OptionEntry) -> [String: Any] {
+    func makeOptionJSON(_ option: QuizOptionEntry) -> [String: Any] {
         return [
-            "value": option.value,
+            "wording": option.wording,
             "linkedEntry": option.linkedEntryID,
             "isAnswer": option.isAnswer
         ]

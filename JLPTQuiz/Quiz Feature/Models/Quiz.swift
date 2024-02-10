@@ -10,7 +10,7 @@ public struct Quiz: Equatable {
     public let type: QuizType
     public let level: QuizLevel
     public let question: String
-    public let options: [OptionEntry]
+    public let options: [QuizOptionEntry]
 }
 
 public enum QuizLevel: String {
@@ -27,8 +27,8 @@ public enum QuizType: String {
     case vocab
 }
 
-public struct OptionEntry: Equatable {
-    public let value: String
+public struct QuizOptionEntry: Equatable {
+    public let wording: String
     public let linkedEntryID: String
     public let isAnswer: Bool
 }

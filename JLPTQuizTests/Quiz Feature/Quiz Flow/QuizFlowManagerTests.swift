@@ -37,6 +37,23 @@ final class QuizFlowManagerTests: XCTestCase {
         }
     }
     
+    func test_selectAnswer_showAnswer_afterSelectingAnswer() {
+        let (sut, quiz) = makeSUTSetupWithOneQuestionTwoOptionsAndFirstOptionIsCorrect()
+        
+        do {
+            try sut.load()
+            _ = try sut.didSelectAnswer(at: 0)
+            switch sut.currentState {
+            case .showingAnswer(let receivedQuiz):
+                XCTAssertEqual(receivedQuiz, quiz)
+            default:
+                XCTFail("Expected showing answer for quiz1, received \(sut.currentState) instead")
+            }
+        } catch {
+            XCTFail("Expected success, received \(error) instead")
+        }
+    }
+    
     func test_selectAnswer_returnCorrectResult_whenSelectingCorrectAnswer() {
         let (sut, _, _) = makeSUTSetupWithTwoQuestionsTwoOptionsAndFirstOptionIsCorrect()
         
@@ -45,6 +62,7 @@ final class QuizFlowManagerTests: XCTestCase {
             let result = try sut.didSelectAnswer(at: 0)
             XCTAssertTrue(result.isCorrect, "Expected to receive correct when selecting correct answer")
             XCTAssertEqual(result.currentScore, 1, "Expected score to be 1, received \(result.currentScore) instead")
+            XCTAssertEqual(result.optionStates, [.correctAnswer, .notSelected], "Expected given option results, received \(result.optionStates) instead")
         } catch {
             XCTFail("Expected success, received \(error) instead")
         }
@@ -58,6 +76,7 @@ final class QuizFlowManagerTests: XCTestCase {
             let result = try sut.didSelectAnswer(at: 1)
             XCTAssertFalse(result.isCorrect, "Expected to receive wrong when selecting wrong answer")
             XCTAssertEqual(result.currentScore, 0, "Expected score to be 0, received \(result.currentScore) instead")
+            XCTAssertEqual(result.optionStates, [.correctAnswer, .wronglySelected], "Expected given option results, received \(result.optionStates) instead")
         } catch {
             XCTFail("Expected success, received \(error) instead")
         }
@@ -69,6 +88,7 @@ final class QuizFlowManagerTests: XCTestCase {
         do {
             try sut.load()
             let _ = try sut.didSelectAnswer(at: 0)
+            try sut.didTapNext()
             switch sut.currentState {
             case .showingQuiz(let receivedQuiz):
                 XCTAssertEqual(receivedQuiz, quiz2, "Expected current quiz to be the second quiz")
@@ -87,6 +107,7 @@ final class QuizFlowManagerTests: XCTestCase {
         do {
             try sut.load()
             let _ = try sut.didSelectAnswer(at: 0)
+            try sut.didTapNext()
             XCTAssertEqual(sut.currentState, .finished, "Expected to finish quiz, received \(sut.currentState) instead")
         } catch {
             XCTFail("Expected success, received \(error) instead")

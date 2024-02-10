@@ -29,7 +29,7 @@ class LocalQuizMapperTests: XCTestCase {
                                  level: .n1,
                                  question: "question-1",
                                  options: [
-                                    OptionEntry(value: "question-1/option-1", linkedEntryID: "linkedEntryID-1", isAnswer: true)
+                                    QuizOptionEntry(wording: "question-1/option-1", linkedEntryID: "linkedEntryID-1", isAnswer: true)
                                  ])
         
         let item2 = makeQuizItem(id: "id-2",
@@ -37,8 +37,8 @@ class LocalQuizMapperTests: XCTestCase {
                                  level: .n2,
                                  question: "question-2",
                                  options: [
-                                    OptionEntry(value: "question-2/option-1", linkedEntryID: "linkedEntryID-2", isAnswer: true),
-                                    OptionEntry(value: "question-2/option-3", linkedEntryID: "linkedEntryID-3", isAnswer: false)
+                                    QuizOptionEntry(wording: "question-2/option-1", linkedEntryID: "linkedEntryID-2", isAnswer: true),
+                                    QuizOptionEntry(wording: "question-2/option-3", linkedEntryID: "linkedEntryID-3", isAnswer: false)
                                  ])
         
         let item3 = makeQuizItem(id: "id-3",
@@ -46,9 +46,9 @@ class LocalQuizMapperTests: XCTestCase {
                                  level: .n5,
                                  question: "question-4",
                                  options: [
-                                    OptionEntry(value: "question-3/option-1", linkedEntryID: "linkedEntryID-4", isAnswer: true),
-                                    OptionEntry(value: "question-3/option-2", linkedEntryID: "linkedEntryID-5", isAnswer: false),
-                                    OptionEntry(value: "question-3/option-3", linkedEntryID: "linkedEntryID-6", isAnswer: true)
+                                    QuizOptionEntry(wording: "question-3/option-1", linkedEntryID: "linkedEntryID-4", isAnswer: true),
+                                    QuizOptionEntry(wording: "question-3/option-2", linkedEntryID: "linkedEntryID-5", isAnswer: false),
+                                    QuizOptionEntry(wording: "question-3/option-3", linkedEntryID: "linkedEntryID-6", isAnswer: true)
                                  ])
         
         let json1 = makeItemsJSON([item1.json, item2.json, item3.json])

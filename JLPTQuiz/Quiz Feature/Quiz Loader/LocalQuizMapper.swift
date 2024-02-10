@@ -52,18 +52,18 @@ final class LocalQuizMapper {
         }
         
         struct LocalOptionEntry: Decodable {
-            let value: String
+            let wording: String
             let linkedEntryID: String
             let isAnswer: Bool
             
             enum CodingKeys: String, CodingKey {
-                case value
+                case wording
                 case linkedEntryID = "linkedEntry"
                 case isAnswer
             }
             
-            var item: OptionEntry {
-                OptionEntry(value: value, linkedEntryID: linkedEntryID, isAnswer: isAnswer)
+            var item: QuizOptionEntry {
+                QuizOptionEntry(wording: wording, linkedEntryID: linkedEntryID, isAnswer: isAnswer)
             }
         }
         

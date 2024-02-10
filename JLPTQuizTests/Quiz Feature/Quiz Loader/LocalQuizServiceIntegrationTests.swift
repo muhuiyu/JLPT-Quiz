@@ -85,10 +85,10 @@ extension LocalQuizServiceIntegrationTests {
         return "question-\(index + 1)"
     }
     
-    private func options(at index: Int) -> [OptionEntry] {
+    private func options(at index: Int) -> [QuizOptionEntry] {
         return [
-            OptionEntry(value: "question-\(index + 1)/option-1", linkedEntryID: "linkedEntry-1", isAnswer: true),
-            OptionEntry(value: "question-\(index + 1)/option-2", linkedEntryID: "linkedEntry-2", isAnswer: false),
+            QuizOptionEntry(wording: "question-\(index + 1)/option-1", linkedEntryID: "linkedEntry-1", isAnswer: true),
+            QuizOptionEntry(wording: "question-\(index + 1)/option-2", linkedEntryID: "linkedEntry-2", isAnswer: false),
         ]
     }
 }
