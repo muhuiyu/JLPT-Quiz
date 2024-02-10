@@ -44,7 +44,7 @@ final class QuizFlowManagerTests: XCTestCase {
             try sut.load()
             _ = try sut.didSelectOption(at: 0)
             switch sut.currentState {
-            case .showingAnswer(let receivedQuiz):
+            case .showingAnswer(let receivedQuiz, _):
                 XCTAssertEqual(receivedQuiz, quiz)
             default:
                 XCTFail("Expected showing answer for quiz1, received \(sut.currentState) instead")

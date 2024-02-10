@@ -13,18 +13,18 @@ public class QuizFlowManager {
     public enum State: Equatable {
         case notStarted
         case showingQuiz(Quiz)
-        case showingAnswer(Quiz)
+        case showingAnswer(Quiz, SelectionResult)
         case ended
     }
     
-    public struct SelectionResult {
-        let selectedIndex: Int
-        let isCorrect: Bool
-        let currentScore: Int
-        let optionStates: [QuizOptionState]
+    public struct SelectionResult: Equatable {
+        public let selectedIndex: Int
+        public let isCorrect: Bool
+        public let currentScore: Int
+        public let optionStates: [QuizOptionState]
     }
     
-    enum QuizOptionState {
+    public enum QuizOptionState {
         case notSelected, wronglySelected, correctAnswer
     }
     
@@ -63,8 +63,9 @@ public class QuizFlowManager {
                     return selectedIndex == index ? .wronglySelected : .notSelected
                 }
             }
-            currentState = .showingAnswer(currentQuiz)
-            return SelectionResult(selectedIndex: selectedIndex, isCorrect: isCorrect, currentScore: currentScore, optionStates: optionStates)
+            let selectionResult = SelectionResult(selectedIndex: selectedIndex, isCorrect: isCorrect, currentScore: currentScore, optionStates: optionStates)
+            currentState = .showingAnswer(currentQuiz, selectionResult)
+            return selectionResult
         default:
             throw Error.invalidAction
         }
@@ -72,7 +73,7 @@ public class QuizFlowManager {
     
     public func didTapNext() throws {
         switch currentState {
-        case .showingAnswer(_):
+        case .showingAnswer(_, _):
             updateCurrentState()
         default:
             throw Error.invalidAction
@@ -96,7 +97,7 @@ public class QuizFlowManager {
 }
 
 extension Quiz {
-    var answerIndex: Int? {
+    public var answerIndex: Int? {
         options.firstIndex(where: { $0.isAnswer })
     }
 }
