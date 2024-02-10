@@ -29,7 +29,7 @@ public class QuizFlowManager {
     
     @Published public var currentState: State = .notStarted
     private var currentScore = 0
-    private(set) var currentIndex = 0
+    public private(set) var currentIndex = 0
     private var quizList = [Quiz]()
     
     public init(service: QuizService) {

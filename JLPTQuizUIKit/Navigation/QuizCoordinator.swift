@@ -23,6 +23,7 @@ class QuizCoordinator: QuizCoordinatorProtocol {
     var type: CoordinatorType = .quiz
     
     private let tabBarItem: UITabBarItem
+    private let quizService = LocalQuizService()
     
     required init(
         _ navigationController: UINavigationController,
@@ -37,7 +38,8 @@ class QuizCoordinator: QuizCoordinatorProtocol {
     }
     
     func showStartScreen() {
-        let viewController = JLPTQuizUIComposer.makeStartQuizComposedWith(startQuizHandler: { [weak self] config in
+        let viewController = JLPTQuizUIComposer.makeStartQuizComposedWith(quizService: quizService,
+                                                                          startQuizHandler: { [weak self] config in
             self?.showQuizSessionScreen(with: config)
         })
         viewController.tabBarItem = tabBarItem
@@ -45,9 +47,8 @@ class QuizCoordinator: QuizCoordinatorProtocol {
     }
     
     func showQuizSessionScreen(with config: QuizConfig) {
-        let viewController = ViewController()
+        let viewController = JLPTQuizUIComposer.makeQuizSessionComposedWith(quizService: quizService, config)
         viewController.view.backgroundColor = .orange
         navigationController.present(viewController, animated: true)
     }
 }
-
