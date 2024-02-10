@@ -18,6 +18,7 @@ public class QuizFlowManager {
     }
     
     public struct SelectionResult {
+        let selectedIndex: Int
         let isCorrect: Bool
         let currentScore: Int
         let optionStates: [QuizOptionState]
@@ -50,20 +51,20 @@ public class QuizFlowManager {
         currentState = .showingQuiz(firstQuestion)
     }
     
-    public func didSelectAnswer(at answerIndex: Int) throws -> SelectionResult {
+    public func didSelectOption(at selectedIndex: Int) throws -> SelectionResult {
         switch currentState {
         case .showingQuiz(let currentQuiz):
-            let isCorrect = currentQuiz.answerIndex == answerIndex
+            let isCorrect = currentQuiz.answerIndex == selectedIndex
             updateCurrentScore(didUserChooseCorrectAnswer: isCorrect)
             let optionStates: [QuizOptionState] = currentQuiz.options.enumerated().map { index, option in
                 if option.isAnswer {
                     return .correctAnswer
                 } else {
-                    return answerIndex == index ? .wronglySelected : .notSelected
+                    return selectedIndex == index ? .wronglySelected : .notSelected
                 }
             }
             currentState = .showingAnswer(currentQuiz)
-            return SelectionResult(isCorrect: isCorrect, currentScore: currentScore, optionStates: optionStates)
+            return SelectionResult(selectedIndex: selectedIndex, isCorrect: isCorrect, currentScore: currentScore, optionStates: optionStates)
         default:
             throw Error.invalidAction
         }

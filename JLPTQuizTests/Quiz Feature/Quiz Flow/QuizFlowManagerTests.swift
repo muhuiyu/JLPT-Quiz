@@ -42,7 +42,7 @@ final class QuizFlowManagerTests: XCTestCase {
         
         do {
             try sut.load()
-            _ = try sut.didSelectAnswer(at: 0)
+            _ = try sut.didSelectOption(at: 0)
             switch sut.currentState {
             case .showingAnswer(let receivedQuiz):
                 XCTAssertEqual(receivedQuiz, quiz)
@@ -59,7 +59,7 @@ final class QuizFlowManagerTests: XCTestCase {
         
         do {
             try sut.load()
-            let result = try sut.didSelectAnswer(at: 0)
+            let result = try sut.didSelectOption(at: 0)
             XCTAssertTrue(result.isCorrect, "Expected to receive correct when selecting correct answer")
             XCTAssertEqual(result.currentScore, 1, "Expected score to be 1, received \(result.currentScore) instead")
             XCTAssertEqual(result.optionStates, [.correctAnswer, .notSelected], "Expected given option results, received \(result.optionStates) instead")
@@ -73,7 +73,7 @@ final class QuizFlowManagerTests: XCTestCase {
         
         do {
             try sut.load()
-            let result = try sut.didSelectAnswer(at: 1)
+            let result = try sut.didSelectOption(at: 1)
             XCTAssertFalse(result.isCorrect, "Expected to receive wrong when selecting wrong answer")
             XCTAssertEqual(result.currentScore, 0, "Expected score to be 0, received \(result.currentScore) instead")
             XCTAssertEqual(result.optionStates, [.correctAnswer, .wronglySelected], "Expected given option results, received \(result.optionStates) instead")
@@ -87,7 +87,7 @@ final class QuizFlowManagerTests: XCTestCase {
         
         do {
             try sut.load()
-            let _ = try sut.didSelectAnswer(at: 0)
+            let _ = try sut.didSelectOption(at: 0)
             try sut.didTapNext()
             switch sut.currentState {
             case .showingQuiz(let receivedQuiz):
@@ -106,7 +106,7 @@ final class QuizFlowManagerTests: XCTestCase {
         
         do {
             try sut.load()
-            let _ = try sut.didSelectAnswer(at: 0)
+            let _ = try sut.didSelectOption(at: 0)
             try sut.didTapNext()
             XCTAssertEqual(sut.currentState, .ended, "Expected to finish quiz, received \(sut.currentState) instead")
         } catch {
