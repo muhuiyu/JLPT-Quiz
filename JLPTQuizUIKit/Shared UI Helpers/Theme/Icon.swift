@@ -12,4 +12,8 @@ final class Icon {
         static let active = "bolt.fill"
     }
     
+    struct Shared {
+        static let close = "xmark"
+    }
+    
 }

@@ -48,7 +48,6 @@ class QuizCoordinator: QuizCoordinatorProtocol {
     
     func showQuizSessionScreen(with config: QuizConfig) {
         let viewController = JLPTQuizUIComposer.makeQuizSessionComposedWith(quizService: quizService, config)
-        viewController.view.backgroundColor = .orange
         navigationController.present(viewController, animated: true)
     }
 }

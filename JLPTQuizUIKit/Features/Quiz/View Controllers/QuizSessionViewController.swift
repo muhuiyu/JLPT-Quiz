@@ -23,6 +23,7 @@ class QuizSessionViewController: BaseViewController<QuizSessionViewModel> {
         
         configureViews()
         configureConstraints()
+        configureBindings()
         
         viewModel.load()
     }
@@ -47,39 +48,12 @@ extension QuizSessionViewController {
 // MARK: - View Config
 extension QuizSessionViewController {
     private func configureViews() {
-        navigationItem.largeTitleDisplayMode = .never
-        headerView.title = viewModel.configureHeaderViewTitle()
-        headerView.didTapClose = { [weak self] in
-            self?.viewModel.endCurrentSession()
-        }
-        view.addSubview(headerView)
-        
-        questionLabel.font = .systemFont(ofSize: 17)
-        questionLabel.textColor = UIColor.label
-        questionLabel.numberOfLines = 0
-        questionLabel.textAlignment = .left
-        view.addSubview(questionLabel)
-        
-        tableView.register(OptionCell.self, forCellReuseIdentifier: OptionCell.reuseID)
-        tableView.tableFooterView = UIView()
-        tableView.contentInsetAdjustmentBehavior = .never
-        tableView.separatorStyle = .none
-        tableView.allowsSelection = true
-        tableView.dataSource = self
-        tableView.delegate = self
-        view.addSubview(tableView)
-        
-        footerView.didTapNext = { [weak self] in
-            self?.viewModel.goToNextQuestion()
-        }
-        footerView.didTapMaster = { [weak self] in
-//            guard let self else { return }
-//            let alert = self.viewModel.makeMasterQuestionConfirmationAlert()
-//            self.present(alert, animated: true)
-        }
-        footerView.isHidden = true
-        view.addSubview(footerView)
+        configureHeaderView()
+        configureQuestionLabel()
+        configureTableView()
+        configureFooterView()
     }
+    
     private func configureConstraints() {
         headerView.snp.remakeConstraints { make in
             make.top.equalTo(view.layoutMarginsGuide).offset(12)
@@ -87,7 +61,7 @@ extension QuizSessionViewController {
         }
         questionLabel.snp.remakeConstraints { make in
             make.top.equalTo(headerView.snp.bottom).offset(12)
-            make.leading.trailing.equalTo(view.layoutMarginsGuide)
+            make.leading.trailing.equalTo(headerView)
         }
         tableView.snp.remakeConstraints { make in
             make.top.equalTo(questionLabel.snp.bottom).offset(12)
@@ -99,32 +73,26 @@ extension QuizSessionViewController {
         }
     }
     
-//    private func configureData(for state: GameState) {
-//        headerView.progress = viewModel.currentProgress
-//        
-//        if state == .questionLoaded {
-//            questionLabel.text = viewModel.getQuiz().question
-//            footerView.isHidden = true
-//        }
-//        
-//        if state == .answered {
-//            footerView.isHidden = false
-//        }
-//        
-//        tableView.reloadData()
-//    }
+    private func configureData() {
+        headerView.progress = viewModel.currentProgress
+        
+        if viewModel.isShowingQuiz {
+            questionLabel.text = viewModel.currentQuiz?.question
+            footerView.isHidden = true
+        } else if viewModel.isShowingAnswer {
+            footerView.isHidden = false
+        }
+        
+        tableView.reloadData()
+    }
     
     private func configureBindings() {
         viewModel.quizFlowManager.$currentState
             .receive(on: DispatchQueue.main)
             .sink { [weak self] state in
                 switch state {
-                case .notStarted:
-                    break
-//                case .questionLoaded, .answered:
-//                    self?.configureData(for: state)
-//                case .sessionSummaryPresented:
-//                    self?.presentSessionSummaryAlert()
+                case .showingAnswer, .showingQuiz:
+                    self?.configureData()
                 case .ended:
                     self?.dismiss(animated: true)
                 default:
@@ -133,13 +101,52 @@ extension QuizSessionViewController {
             }
             .store(in: &subscriptions)
     }
+    
+    private func configureHeaderView() {
+        navigationItem.largeTitleDisplayMode = .never
+        headerView.title = viewModel.configureHeaderViewTitle()
+        headerView.didTapClose = { [weak self] in
+            self?.viewModel.endCurrentSession()
+        }
+        view.addSubview(headerView)
+    }
+    
+    private func configureQuestionLabel() {
+        questionLabel.font = .systemFont(ofSize: 17)
+        questionLabel.textColor = UIColor.label
+        questionLabel.numberOfLines = 0
+        questionLabel.textAlignment = .left
+        view.addSubview(questionLabel)
+    }
+    
+    private func configureTableView() {
+        tableView.register(OptionCell.self, forCellReuseIdentifier: OptionCell.reuseID)
+        tableView.tableFooterView = UIView()
+        tableView.contentInsetAdjustmentBehavior = .never
+        tableView.separatorStyle = .none
+        tableView.dataSource = self
+        tableView.delegate = self
+        view.addSubview(tableView)
+    }
+    
+    private func configureFooterView() {
+        footerView.didTapNext = { [weak self] in
+            self?.viewModel.goToNextQuestion()
+        }
+        footerView.didTapMaster = { [weak self] in
+//            guard let self else { return }
+//            let alert = self.viewModel.makeMasterQuestionConfirmationAlert()
+//            self.present(alert, animated: true)
+        }
+        view.addSubview(footerView)
+    }
 }
 
 extension QuizSessionViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch viewModel.quizFlowManager.currentState {
-        case .showingQuiz(let quiz):
+        case .showingQuiz(let quiz), .showingAnswer(let quiz, _):
             return quiz.options.count
         default:
             return 0
@@ -152,7 +159,7 @@ extension QuizSessionViewController: UITableViewDataSource, UITableViewDelegate 
             return UITableViewCell()
         }
         cell.option = viewModel.currentQuiz?.options[indexPath.row]
-//        cell.state = viewModel.getCellState(for: indexPath.row)
+        cell.state = viewModel.getOptionCellState(at: indexPath.row)
         return cell
     }
     
@@ -162,7 +169,7 @@ extension QuizSessionViewController: UITableViewDataSource, UITableViewDelegate 
         }
         
         if viewModel.isShowingQuiz {
-            viewModel.didAnswerQuestion(with: indexPath.row)
+            viewModel.didSelectOption(at: indexPath.row)
         } else if viewModel.isShowingAnswer {
             navigationToDetails()
         }

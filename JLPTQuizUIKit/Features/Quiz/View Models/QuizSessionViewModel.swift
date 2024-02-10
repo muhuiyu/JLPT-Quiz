@@ -25,8 +25,12 @@ class QuizSessionViewModel: BaseViewModel {
         }
     }
     
-    func didAnswerQuestion(with answerIndex: Int) {
-        
+    func didSelectOption(at answerIndex: Int) {
+        do {
+            _ = try quizFlowManager.didSelectOption(at: answerIndex)
+        } catch {
+            
+        }
     }
     
     func masterCurrentQuestion() {
@@ -45,12 +49,32 @@ class QuizSessionViewModel: BaseViewModel {
 extension QuizSessionViewModel {
     var currentQuiz: Quiz? {
         switch quizFlowManager.currentState {
-        case .showingQuiz(let quiz), .showingAnswer(let quiz):
+        case .showingQuiz(let quiz), .showingAnswer(let quiz, _):
             return quiz
         default:
             return nil
         }
     }
+    
+    var currentProgress: Double {
+        return Double(quizFlowManager.currentIndex + 1) / Double(config.numberOfQuestions)
+    }
+    
+    func getOptionCellState(at index: Int) -> OptionCell.State {
+        switch quizFlowManager.currentState {
+        case .showingAnswer(let quiz, let selectionResult):
+            if index == quiz.answerIndex {
+                return .correctAnswer
+            } else if index == selectionResult.selectedIndex {
+                return .selectedWrongly
+            } else {
+                return .unselected
+            }
+        default:
+            return .unanswered
+        }
+    }
+    
     func getSoundFileName(when isCorrect: Bool) -> String {
         return isCorrect ? "correct" : "wrong"
     }
@@ -60,7 +84,7 @@ extension QuizSessionViewModel {
     }
     var isShowingAnswer: Bool {
         switch quizFlowManager.currentState {
-        case .showingAnswer(_):
+        case .showingAnswer:
             return true
         default:
             return false
@@ -69,10 +93,20 @@ extension QuizSessionViewModel {
     
     var isShowingQuiz: Bool {
         switch quizFlowManager.currentState {
-        case .showingQuiz(_):
+        case .showingQuiz:
             return true
         default:
             return false
+        }
+    }
+}
+
+extension QuizFlowManager.QuizOptionState {
+    func toOptionCellState() -> OptionCell.State {
+        switch self {
+        case .notSelected: return .unselected
+        case .wronglySelected: return .selectedWrongly
+        case .correctAnswer: return .correctAnswer
         }
     }
 }
