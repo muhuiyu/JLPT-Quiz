@@ -41,7 +41,7 @@ class SessionHeaderView: UIView {
         
         addSubview(progressBar)
         
-        dismissButton.setImage(UIImage(systemName: Icon.Shared.close), for: .normal)
+        dismissButton.setImage(Icon.Shared.close, for: .normal)
         addSubview(dismissButton)
         
         progressBar.snp.remakeConstraints { make in

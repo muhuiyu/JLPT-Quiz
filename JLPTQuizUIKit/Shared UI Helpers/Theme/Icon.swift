@@ -5,15 +5,17 @@
 //  Created by Mu Yu on 2/8/24.
 //
 
+import UIKit
+
 final class Icon {
     
     struct QuizTab {
-        static let inactive = "bolt"
-        static let active = "bolt.fill"
+        static var inactive: UIImage? { UIImage(systemName: "bolt") }
+        static var active: UIImage? { UIImage(systemName: "bolt.fill") }
     }
     
     struct Shared {
-        static let close = "xmark"
+        static var close: UIImage? { UIImage(systemName: "xmark") }
     }
     
 }

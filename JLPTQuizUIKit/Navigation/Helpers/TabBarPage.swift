@@ -21,17 +21,15 @@ enum TabBarPage: Int, CaseIterable {
     }
     
     var image: UIImage? {
-        let imageName = switch self {
+        return switch self {
         case .quiz: Icon.QuizTab.inactive
         }
-        return UIImage(systemName: imageName)
     }
     
     var selectedImage: UIImage? {
-        let imageName = switch self {
+        return switch self {
         case .quiz: Icon.QuizTab.active
         }
-        return UIImage(systemName: imageName)
     }
     
     var tabBarItem: UITabBarItem {
