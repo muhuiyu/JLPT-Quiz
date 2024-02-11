@@ -39,6 +39,7 @@ public final class LocalQuizService: QuizService {
         return Array(quizzes
             .filter { $0.type == config.type }
             .filter { $0.level == config.level }
+            .shuffled()
             .prefix(config.numberOfQuestions)
         )
     }
