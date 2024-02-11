@@ -52,7 +52,7 @@ extension ProgressBarView {
 extension ProgressBarView {
     private func configureViews() {
         activeView.layer.cornerRadius = 4
-        activeView.backgroundColor = .blue
+        activeView.backgroundColor = .primary
         backgroundView.layer.cornerRadius = 4
         backgroundView.addSubview(activeView)
         backgroundView.backgroundColor = UIColor.tertiarySystemGroupedBackground

@@ -23,6 +23,8 @@
 		E406D53B2B7096BE00DD9AD6 /* localQuizServiceIntegrationTests-quizzes.json in Resources */ = {isa = PBXBuildFile; fileRef = E406D5392B70946100DD9AD6 /* localQuizServiceIntegrationTests-quizzes.json */; };
 		E406D5412B709A3500DD9AD6 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D5402B709A3500DD9AD6 /* XCTestCase+MemoryLeakTracking.swift */; };
 		E438E4DC2B77047400F80F19 /* Text+QuizSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438E4DB2B77047400F80F19 /* Text+QuizSessionViewController.swift */; };
+		E438E4DE2B788B5B00F80F19 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438E4DD2B788B5B00F80F19 /* UIColor+hex.swift */; };
+		E438E4E12B788B7500F80F19 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438E4E02B788B7500F80F19 /* UIColor+Theme.swift */; };
 		E45B1A732B738538001B838D /* XCTestCase+QuizFeatureHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1A722B738538001B838D /* XCTestCase+QuizFeatureHelpers.swift */; };
 		E45B1A752B73861A001B838D /* QuizFlowManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1A742B73861A001B838D /* QuizFlowManagerTests.swift */; };
 		E45B1A782B747EF7001B838D /* QuizFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1A772B747EF7001B838D /* QuizFlowManager.swift */; };
@@ -117,6 +119,8 @@
 		E406D5392B70946100DD9AD6 /* localQuizServiceIntegrationTests-quizzes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "localQuizServiceIntegrationTests-quizzes.json"; sourceTree = "<group>"; };
 		E406D5402B709A3500DD9AD6 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		E438E4DB2B77047400F80F19 /* Text+QuizSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+QuizSessionViewController.swift"; sourceTree = "<group>"; };
+		E438E4DD2B788B5B00F80F19 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		E438E4E02B788B7500F80F19 /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
 		E45B1A722B738538001B838D /* XCTestCase+QuizFeatureHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+QuizFeatureHelpers.swift"; sourceTree = "<group>"; };
 		E45B1A742B73861A001B838D /* QuizFlowManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizFlowManagerTests.swift; sourceTree = "<group>"; };
 		E45B1A772B747EF7001B838D /* QuizFlowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizFlowManager.swift; sourceTree = "<group>"; };
@@ -300,6 +304,14 @@
 			path = "Shared Helpers";
 			sourceTree = "<group>";
 		};
+		E438E4DF2B788B6800F80F19 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E438E4DD2B788B5B00F80F19 /* UIColor+hex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E45B1A6E2B7382DC001B838D /* Quiz Loader */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				E45B1AD62B74820C001B838D /* Icon.swift */,
+				E438E4E02B788B7500F80F19 /* UIColor+Theme.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -450,6 +463,7 @@
 			isa = PBXGroup;
 			children = (
 				E45B1AF02B748659001B838D /* Composers */,
+				E438E4DF2B788B6800F80F19 /* Extensions */,
 			);
 			path = "Shared UI Helpers";
 			sourceTree = "<group>";
@@ -724,6 +738,7 @@
 				E45B1B052B74BFF5001B838D /* QuizSessionViewController.swift in Sources */,
 				E45B1AE82B74842A001B838D /* QuizCoordinator.swift in Sources */,
 				E45B1AD02B748100001B838D /* TabCoordinator.swift in Sources */,
+				E438E4E12B788B7500F80F19 /* UIColor+Theme.swift in Sources */,
 				E45B1B012B74916F001B838D /* StartQuizConfigCell.swift in Sources */,
 				E45B1ACE2B7480CE001B838D /* AppCoordinator.swift in Sources */,
 				E45B1AFF2B749155001B838D /* StartQuizViewModel.swift in Sources */,
@@ -743,6 +758,7 @@
 				E45B1B122B761CE8001B838D /* OptionCell.swift in Sources */,
 				E45B1ACC2B748085001B838D /* Coordinator.swift in Sources */,
 				E4F9F56E2B76242300D01B61 /* QuizSessionViewModel.swift in Sources */,
+				E438E4DE2B788B5B00F80F19 /* UIColor+hex.swift in Sources */,
 				E45B1AE32B7483E3001B838D /* Base.swift in Sources */,
 				E45B1AFA2B748A3E001B838D /* Text+StartQuizViewController.swift in Sources */,
 			);
