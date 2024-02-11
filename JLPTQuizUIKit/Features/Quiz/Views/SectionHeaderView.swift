@@ -32,13 +32,13 @@ class SessionHeaderView: UIView {
         }
     }
     
-    init(progress: Double = 0) {
+    init() {
         super.init(frame: .zero)
         
-        titleLabel.text = "default"
         titleLabel.font = .systemFont(ofSize: 14)
-        titleLabel.textColor = UIColor.secondaryLabel
+        titleLabel.textColor = .secondaryLabel
         addSubview(titleLabel)
+        
         addSubview(progressBar)
         
         dismissButton.setImage(UIImage(systemName: Icon.Shared.close), for: .normal)
@@ -51,13 +51,13 @@ class SessionHeaderView: UIView {
         titleLabel.snp.remakeConstraints { make in
             make.center.equalTo(dismissButton)
             make.leading.equalTo(progressBar)
-            make.bottom.equalToSuperview()
         }
         
         dismissButton.snp.remakeConstraints { make in
             make.top.equalTo(progressBar.snp.bottom).offset(12)
             make.trailing.equalToSuperview()
-            make.size.equalTo(24)
+            make.bottom.equalToSuperview().inset(12)
+            make.size.equalTo(32)
         }
     }
     
