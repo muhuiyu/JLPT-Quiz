@@ -29,7 +29,7 @@ final class LocalQuizServiceIntegrationTests: XCTestCase {
         let filter = QuizConfig(numberOfQuestions: 1, level: .n1, type: .grammar)
         
         do {
-            let session = try sut.generateSession(filter: filter)
+            let session = try sut.generateSession(filteredBy: filter)
             XCTAssertEqual(session.quizList.count, 1)
             XCTAssertEqual(session.quizList[0], expectedItem(at: 0))
         } catch {

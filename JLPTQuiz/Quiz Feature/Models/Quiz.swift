@@ -5,8 +5,10 @@
 //  Created by Mu Yu on 2/5/24.
 //
 
+public typealias QuizID = String
+
 public struct Quiz: Equatable {
-    public let id: String
+    public let id: QuizID
     public let type: QuizType
     public let level: QuizLevel
     public let question: String

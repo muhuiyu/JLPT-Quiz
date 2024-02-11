@@ -10,17 +10,19 @@ import UIKit
 class SessionFooterView: UIView {
     
     private let masteredButton = UIButton()
-    private let nextButton = UIButton()
+    private let nextButton = PrimaryTextButton()
     
     var didTapNext: (() -> Void)? {
         didSet {
-//            nextButton.tapHandler = didTapNext
+            nextButton.primaryAction = didTapNext
         }
     }
     
     var didTapMaster: (() -> Void)? {
         didSet {
-//            masteredButton.tapHandler = didTapMaster
+            masteredButton.addAction(UIAction(handler: { [weak self] _ in
+                self?.didTapMaster?()
+            }), for: .touchUpInside)
         }
     }
     
@@ -40,7 +42,10 @@ extension SessionFooterView {
     private func configureViews() {
         nextButton.setTitle(Text.QuizSessionViewController.continueButton, for: .normal)
         addSubview(nextButton)
+        
+        masteredButton.setTitleColor(.primary, for: .normal)
         masteredButton.setTitle(Text.QuizSessionViewController.masterQuestionButton, for: .normal)
+        masteredButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
         addSubview(masteredButton)
     }
     private func configureConstraints() {
@@ -48,11 +53,10 @@ extension SessionFooterView {
             make.top.equalToSuperview()
             make.leading.trailing.equalTo(masteredButton)
             make.bottom.equalTo(masteredButton.snp.top).offset(-12)
+            make.height.equalTo(48)
         }
         masteredButton.snp.remakeConstraints { make in
             make.leading.trailing.bottom.equalToSuperview()
         }
     }
 }
-
-

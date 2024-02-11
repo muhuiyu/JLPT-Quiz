@@ -11,7 +11,7 @@ import JLPTQuiz
 class StartQuizViewController: BaseViewController<StartQuizViewModel> {
     
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
-    private let startButton = UIButton()
+    private let startButton = PrimaryTextButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,13 +65,9 @@ extension StartQuizViewController {
     
     private func configureStartButton() {
         startButton.setTitle(Text.StartQuizViewController.startButtonTitle, for: .normal)
-        startButton.setTitleColor(.white, for: .normal)
-        startButton.titleLabel?.font = .boldSystemFont(ofSize: 17)
-        startButton.backgroundColor = .systemBlue
-        startButton.layer.cornerRadius = 12
-        startButton.addAction(UIAction(handler: { [weak self] _ in
+        startButton.primaryAction = { [weak self] in
             self?.viewModel.didTapStart()
-        }), for: .touchUpInside)
+        }
         view.addSubview(startButton)
     }
 }

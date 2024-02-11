@@ -16,7 +16,7 @@ class QuizSessionViewController: BaseViewController<QuizSessionViewModel> {
     private let tableView = UITableView()
     private let footerView = SessionFooterView()
     
-    private var answerSoundEffect: AVAudioPlayer?
+    private var answerSoundEffectPlayer: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +36,37 @@ extension QuizSessionViewController {
 }
 
 extension QuizSessionViewController {
-    func playSound(when isCorrect: Bool) {
+    private func playSound(when isCorrect: Bool) {
         let soundFileName = viewModel.getSoundFileName(when: isCorrect)
-        guard let path = Bundle.main.path(forResource: soundFileName, ofType: nil) else { return }
+        guard let path = Bundle.main.path(forResource: soundFileName, ofType: "wav") else {
+            return
+        }
         let url = URL(fileURLWithPath: path)
-        answerSoundEffect = try? AVAudioPlayer(contentsOf: url)
-        answerSoundEffect?.play()
+        answerSoundEffectPlayer = try? AVAudioPlayer(contentsOf: url)
+        answerSoundEffectPlayer?.play()
+    }
+    
+    private func presentResultAlert() {
+        let alert = JLPTQuizAlertComposer.makeQuizSessionResultAlert(score: viewModel.currentScore, numberOfQuestions: viewModel.numberOfQuestions) { [weak self] in
+            self?.dismiss(animated: true)
+        }
+        present(alert, animated: true)
+    }
+}
+
+extension QuizSessionViewController {
+    private func configureData() {
+        headerView.progress = viewModel.currentProgress
+        
+        if viewModel.isShowingQuiz {
+            headerView.title = viewModel.configureHeaderViewTitle()
+            questionLabel.text = viewModel.currentQuiz?.question
+            footerView.isHidden = true
+        } else if viewModel.isShowingAnswer {
+            footerView.isHidden = false
+        }
+        
+        tableView.reloadData()
     }
 }
 
@@ -56,7 +81,7 @@ extension QuizSessionViewController {
     
     private func configureConstraints() {
         headerView.snp.remakeConstraints { make in
-            make.top.equalTo(view.layoutMarginsGuide).offset(12)
+            make.top.equalTo(view.layoutMarginsGuide).offset(24)
             make.leading.trailing.equalTo(view.layoutMarginsGuide)
         }
         questionLabel.snp.remakeConstraints { make in
@@ -73,28 +98,18 @@ extension QuizSessionViewController {
         }
     }
     
-    private func configureData() {
-        headerView.progress = viewModel.currentProgress
-        
-        if viewModel.isShowingQuiz {
-            questionLabel.text = viewModel.currentQuiz?.question
-            footerView.isHidden = true
-        } else if viewModel.isShowingAnswer {
-            footerView.isHidden = false
-        }
-        
-        tableView.reloadData()
-    }
-    
     private func configureBindings() {
         viewModel.quizFlowManager.$currentState
             .receive(on: DispatchQueue.main)
             .sink { [weak self] state in
                 switch state {
-                case .showingAnswer, .showingQuiz:
+                case .showingAnswer(_ , let result):
+                    self?.playSound(when: result.isCorrect)
+                    self?.configureData()
+                case .showingQuiz:
                     self?.configureData()
                 case .ended:
-                    self?.dismiss(animated: true)
+                    self?.presentResultAlert()
                 default:
                     break
                 }
@@ -134,9 +149,10 @@ extension QuizSessionViewController {
             self?.viewModel.goToNextQuestion()
         }
         footerView.didTapMaster = { [weak self] in
-//            guard let self else { return }
-//            let alert = self.viewModel.makeMasterQuestionConfirmationAlert()
-//            self.present(alert, animated: true)
+            let alert = JLPTQuizAlertComposer.makeMasterQuizConfirmationAlert(with: {
+                self?.viewModel.masterCurrentQuestion()
+            })
+            self?.present(alert, animated: true)
         }
         view.addSubview(footerView)
     }

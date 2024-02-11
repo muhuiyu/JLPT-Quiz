@@ -11,5 +11,9 @@ extension Text {
         static let viewMoreButton = "View more"
         static let continueButton = "Continue"
         static let masterQuestionButton = "I mastered this question already"
+        static let masterQuestionConfirmationTitle = "Master this question?"
+        static let masterQuestionConfirmationMessage = "The question won't appear again."
+        static let masterQuestionConfirmationConfirmTitle = "Master it!"
+        static let masterQuestionConfirmationCancelTitle = "Cancel"
     }
 }

@@ -38,8 +38,8 @@ class QuizCoordinator: QuizCoordinatorProtocol {
     }
     
     func showStartScreen() {
-        let viewController = JLPTQuizUIComposer.makeStartQuizComposedWith(quizService: quizService,
-                                                                          startQuizHandler: { [weak self] config in
+        let viewController = JLPTQuizUIComposer.makeStartQuizComposed(with: quizService,
+                                                                      startQuizHandler: { [weak self] config in
             self?.showQuizSessionScreen(with: config)
         })
         viewController.tabBarItem = tabBarItem
@@ -47,7 +47,7 @@ class QuizCoordinator: QuizCoordinatorProtocol {
     }
     
     func showQuizSessionScreen(with config: QuizConfig) {
-        let viewController = JLPTQuizUIComposer.makeQuizSessionComposedWith(quizService: quizService, config)
+        let viewController = JLPTQuizUIComposer.makeQuizSessionComposed(with: quizService, config)
         navigationController.present(viewController, animated: true)
     }
 }

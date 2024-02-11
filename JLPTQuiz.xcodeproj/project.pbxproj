@@ -25,6 +25,8 @@
 		E438E4DC2B77047400F80F19 /* Text+QuizSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438E4DB2B77047400F80F19 /* Text+QuizSessionViewController.swift */; };
 		E438E4DE2B788B5B00F80F19 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438E4DD2B788B5B00F80F19 /* UIColor+hex.swift */; };
 		E438E4E12B788B7500F80F19 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438E4E02B788B7500F80F19 /* UIColor+Theme.swift */; };
+		E438E4E42B78A53100F80F19 /* PrimaryTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438E4E32B78A53100F80F19 /* PrimaryTextButton.swift */; };
+		E438E4E62B78A7E500F80F19 /* JLPTQuizAlertComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438E4E52B78A7E500F80F19 /* JLPTQuizAlertComposer.swift */; };
 		E45B1A732B738538001B838D /* XCTestCase+QuizFeatureHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1A722B738538001B838D /* XCTestCase+QuizFeatureHelpers.swift */; };
 		E45B1A752B73861A001B838D /* QuizFlowManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1A742B73861A001B838D /* QuizFlowManagerTests.swift */; };
 		E45B1A782B747EF7001B838D /* QuizFlowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B1A772B747EF7001B838D /* QuizFlowManager.swift */; };
@@ -121,6 +123,8 @@
 		E438E4DB2B77047400F80F19 /* Text+QuizSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+QuizSessionViewController.swift"; sourceTree = "<group>"; };
 		E438E4DD2B788B5B00F80F19 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		E438E4E02B788B7500F80F19 /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
+		E438E4E32B78A53100F80F19 /* PrimaryTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTextButton.swift; sourceTree = "<group>"; };
+		E438E4E52B78A7E500F80F19 /* JLPTQuizAlertComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLPTQuizAlertComposer.swift; sourceTree = "<group>"; };
 		E45B1A722B738538001B838D /* XCTestCase+QuizFeatureHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+QuizFeatureHelpers.swift"; sourceTree = "<group>"; };
 		E45B1A742B73861A001B838D /* QuizFlowManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizFlowManagerTests.swift; sourceTree = "<group>"; };
 		E45B1A772B747EF7001B838D /* QuizFlowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizFlowManager.swift; sourceTree = "<group>"; };
@@ -312,6 +316,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E438E4E22B78A51F00F80F19 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E438E4E32B78A53100F80F19 /* PrimaryTextButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E45B1A6E2B7382DC001B838D /* Quiz Loader */ = {
 			isa = PBXGroup;
 			children = (
@@ -462,6 +474,7 @@
 		E45B1AEE2B74864E001B838D /* Shared UI Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E438E4E22B78A51F00F80F19 /* Views */,
 				E45B1AF02B748659001B838D /* Composers */,
 				E438E4DF2B788B6800F80F19 /* Extensions */,
 			);
@@ -472,6 +485,7 @@
 			isa = PBXGroup;
 			children = (
 				E45B1AF12B748666001B838D /* JLPTQuizUIComposer.swift */,
+				E438E4E52B78A7E500F80F19 /* JLPTQuizAlertComposer.swift */,
 			);
 			path = Composers;
 			sourceTree = "<group>";
@@ -749,6 +763,8 @@
 				E45B1ADA2B748260001B838D /* Text.swift in Sources */,
 				E45B1B092B76182C001B838D /* SectionHeaderView.swift in Sources */,
 				E45B1AD72B74820C001B838D /* Icon.swift in Sources */,
+				E438E4E42B78A53100F80F19 /* PrimaryTextButton.swift in Sources */,
+				E438E4E62B78A7E500F80F19 /* JLPTQuizAlertComposer.swift in Sources */,
 				E45B1A9A2B747F9C001B838D /* AppDelegate.swift in Sources */,
 				E45B1B072B761818001B838D /* ProgressBarView.swift in Sources */,
 				E45B1AEA2B748541001B838D /* TabBarPage.swift in Sources */,

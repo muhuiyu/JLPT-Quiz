@@ -11,6 +11,7 @@ class QuizSessionViewModel: BaseViewModel {
     let quizFlowManager: QuizFlowManager
     
     private let config: QuizConfig
+    private var currentResult: QuizFlowManager.SelectionResult?
     
     init(quizFlowManager: QuizFlowManager, config: QuizConfig) {
         self.quizFlowManager = quizFlowManager
@@ -18,19 +19,11 @@ class QuizSessionViewModel: BaseViewModel {
     }
     
     func load() {
-        do {
-            try quizFlowManager.load()
-        } catch {
-            
-        }
+        try? quizFlowManager.load(filteredBy: config)
     }
     
     func didSelectOption(at answerIndex: Int) {
-        do {
-            _ = try quizFlowManager.didSelectOption(at: answerIndex)
-        } catch {
-            
-        }
+        currentResult = try? quizFlowManager.didSelectOption(at: answerIndex)
     }
     
     func masterCurrentQuestion() {
@@ -38,7 +31,7 @@ class QuizSessionViewModel: BaseViewModel {
     }
     
     func goToNextQuestion() {
-        
+        try? quizFlowManager.didTapNext()
     }
     
     func endCurrentSession() {
@@ -58,6 +51,14 @@ extension QuizSessionViewModel {
     
     var currentProgress: Double {
         return Double(quizFlowManager.currentIndex + 1) / Double(config.numberOfQuestions)
+    }
+    
+    var currentScore: Int {
+        return currentResult?.currentScore ?? 0
+    }
+    
+    var numberOfQuestions: Int {
+        return config.numberOfQuestions
     }
     
     func getOptionCellState(at index: Int) -> OptionCell.State {

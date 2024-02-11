@@ -42,8 +42,8 @@ public class QuizFlowManager {
         case invalidAction
     }
     
-    public func load() throws {
-        let session = try service.generateSession(filter: nil)
+    public func load(filteredBy config: QuizConfig) throws {
+        let session = try service.generateSession(filteredBy: config)
         guard let firstQuestion = session.quizList.first else {
             throw Error.emptyQuizList
         }

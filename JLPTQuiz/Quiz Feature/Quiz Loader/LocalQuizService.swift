@@ -14,7 +14,7 @@ public final class LocalQuizService: QuizService {
         self.jsonFileName = jsonFileName
     }
     
-    public func generateSession(filter: QuizConfig? = nil) throws -> Session {
+    public func generateSession(filteredBy: QuizConfig? = nil) throws -> Session {
         guard let url = Bundle(for: type(of: self)).url(forResource: jsonFileName, withExtension: "json") else {
             throw QuizServiceError.missingFile
         }
@@ -28,7 +28,7 @@ public final class LocalQuizService: QuizService {
         
         // TODO: fetch user stats
         
-        let filteredQuizzes = filterQuizzes(items, with: filter)
+        let filteredQuizzes = filterQuizzes(items, with: filteredBy)
         
         return Session(quizList: filteredQuizzes)
     }
