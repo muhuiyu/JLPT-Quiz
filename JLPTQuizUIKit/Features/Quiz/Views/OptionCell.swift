@@ -82,9 +82,9 @@ extension OptionCell {
     private func reconfigureViews(for state: State) {
         switch state {
         case .correctAnswer:
-            containerView.backgroundColor = .green
+            containerView.backgroundColor = .QuizSession.correct
         case .selectedWrongly:
-            containerView.backgroundColor = .red
+            containerView.backgroundColor = .QuizSession.wrong
         default:
             containerView.backgroundColor = .secondarySystemBackground
         }
