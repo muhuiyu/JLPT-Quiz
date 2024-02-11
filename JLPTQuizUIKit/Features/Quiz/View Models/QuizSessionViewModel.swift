@@ -33,10 +33,6 @@ class QuizSessionViewModel: BaseViewModel {
     func goToNextQuestion() {
         try? quizFlowManager.didTapNext()
     }
-    
-    func endCurrentSession() {
-        
-    }
 }
 
 extension QuizSessionViewModel {

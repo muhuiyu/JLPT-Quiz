@@ -121,7 +121,7 @@ extension QuizSessionViewController {
         navigationItem.largeTitleDisplayMode = .never
         headerView.title = viewModel.configureHeaderViewTitle()
         headerView.didTapClose = { [weak self] in
-            self?.viewModel.endCurrentSession()
+            self?.dismiss(animated: true)
         }
         view.addSubview(headerView)
     }
