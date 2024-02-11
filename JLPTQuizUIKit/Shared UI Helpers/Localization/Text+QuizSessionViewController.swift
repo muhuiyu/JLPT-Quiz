@@ -9,5 +9,7 @@ extension Text {
     struct QuizSessionViewController {
         static let headerTitlePrefix = "Question"
         static let viewMoreButton = "View more"
+        static let continueButton = "Continue"
+        static let masterQuestionButton = "I mastered this question already"
     }
 }

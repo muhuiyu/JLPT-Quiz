@@ -38,9 +38,9 @@ class SessionFooterView: UIView {
 // MARK: - View Config
 extension SessionFooterView {
     private func configureViews() {
-        nextButton.setTitle("Continue", for: .normal)
+        nextButton.setTitle(Text.QuizSessionViewController.continueButton, for: .normal)
         addSubview(nextButton)
-        masteredButton.setTitle("I mastered this question already", for: .normal)
+        masteredButton.setTitle(Text.QuizSessionViewController.masterQuestionButton, for: .normal)
         addSubview(masteredButton)
     }
     private func configureConstraints() {
