@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import JLPTQuiz
 import Combine
 import AVFoundation
 
@@ -30,8 +29,13 @@ class QuizSessionViewController: BaseViewController<QuizSessionViewModel> {
 }
 
 extension QuizSessionViewController {
-    private func navigationToDetails() {
-        
+    private func navigationToDetails(for id: String?) {
+        guard let id else {
+            let alert = JLPTQuizAlertComposer.makeQuizSessionNoAvailableEntryDetailsAlert()
+            present(alert, animated: true)
+            return
+        }
+        viewModel.showEntryDetails(for: id)
     }
 }
 
@@ -187,14 +191,8 @@ extension QuizSessionViewController: UITableViewDataSource, UITableViewDelegate 
         if viewModel.isShowingQuiz {
             viewModel.didSelectOption(at: indexPath.row)
         } else if viewModel.isShowingAnswer {
-            navigationToDetails()
+            navigationToDetails(for: viewModel.getOptionLinkedEntryID(at: indexPath.row))
         }
     }
     
-}
-
-#Preview {
-    let manager = QuizFlowManager(service: LocalQuizService())
-    let viewModel = QuizSessionViewModel(quizFlowManager: manager, config: QuizConfig(numberOfQuestions: 5, level: .n1, type: .grammar))
-    return QuizSessionViewController(viewModel: viewModel).embedInNavigationController()
 }

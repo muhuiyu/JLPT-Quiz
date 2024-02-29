@@ -28,6 +28,6 @@ protocol CoordinatorFinishDelegate: AnyObject {
 }
 
 enum CoordinatorType {
-    case app, welcome, tab, quiz
+    case app, welcome, tab, quiz, session
 }
 

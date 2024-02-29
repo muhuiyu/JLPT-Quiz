@@ -14,6 +14,7 @@ protocol QuizCoordinatorProtocol: Coordinator {
 }
 
 class QuizCoordinator: QuizCoordinatorProtocol {
+    
     var finishDelegate: CoordinatorFinishDelegate?
     
     var navigationController: UINavigationController
@@ -47,7 +48,16 @@ class QuizCoordinator: QuizCoordinatorProtocol {
     }
     
     func showQuizSessionScreen(with config: QuizConfig) {
-        let viewController = JLPTQuizUIComposer.makeQuizSessionComposed(with: quizService, config)
-        navigationController.present(viewController, animated: true)
+        let (coordinator, navigationController) = CoordinatorFactory.makeSessionCoordinator(quizService: quizService, quizConfig: config)
+        coordinator.finishDelegate = self
+        childCoordinators.append(coordinator)
+        self.navigationController.present(navigationController, animated: true)
+        coordinator.start()
+    }
+}
+
+extension QuizCoordinator: CoordinatorFinishDelegate {
+    func coordinatorDidFinish(childCoordinator: Coordinator) {
+        childCoordinators = childCoordinators.filter { $0.type != childCoordinator.type }
     }
 }

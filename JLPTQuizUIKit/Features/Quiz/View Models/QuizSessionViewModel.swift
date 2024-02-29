@@ -8,12 +8,14 @@
 import JLPTQuiz
 
 class QuizSessionViewModel: BaseViewModel {
+    private var coordinator: EntryDetailCoordinating?
     let quizFlowManager: QuizFlowManager
     
     private let config: QuizConfig
     private var currentResult: QuizFlowManager.SelectionResult?
     
-    init(quizFlowManager: QuizFlowManager, config: QuizConfig) {
+    init(coordinator: EntryDetailCoordinating, quizFlowManager: QuizFlowManager, config: QuizConfig) {
+        self.coordinator = coordinator
         self.quizFlowManager = quizFlowManager
         self.config = config
     }
@@ -32,6 +34,10 @@ class QuizSessionViewModel: BaseViewModel {
     
     func goToNextQuestion() {
         try? quizFlowManager.didTapNext()
+    }
+    
+    func showEntryDetails(for id: String) {
+        coordinator?.showEntryDetailsScreen(for: id, as: config.type)
     }
 }
 
@@ -55,6 +61,10 @@ extension QuizSessionViewModel {
     
     var numberOfQuestions: Int {
         return config.numberOfQuestions
+    }
+    
+    func getOptionLinkedEntryID(at index: Int) -> String? {
+        return currentQuiz?.options[index].linkedEntryID
     }
     
     func getOptionCellState(at index: Int) -> OptionCell.State {

@@ -28,4 +28,10 @@ final class JLPTQuizAlertComposer {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in action() }))
         return alert
     }
+    
+    static func makeQuizSessionNoAvailableEntryDetailsAlert() -> UIAlertController {
+        let alert = UIAlertController(title: "Oops, no data yet", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        return alert
+    }
 }
