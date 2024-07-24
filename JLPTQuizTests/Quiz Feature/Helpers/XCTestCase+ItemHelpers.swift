@@ -1,5 +1,5 @@
 //
-//  XCTestCase+GrammarHelpers.swift
+//  XCTestCase+ItemHelpers.swift
 //  JLPTQuiz
 //
 //  Created by Grace, Mu-Hui Yu on 7/24/24.
@@ -35,6 +35,27 @@ extension XCTestCase {
             "examples": examples,
             "relatedGrammars": relatedGrammarIDs,
             "remark": remark
+        ].compactMapValues { $0 }
+        
+        return (model, json)
+    }
+    
+    func makeVocabItem(
+        id: VocabID,
+        word: String,
+        reading: String,
+        meaning: String
+    ) -> (model: Vocab, json: [String: Any]) {
+        let model = Vocab(
+            id: id,
+            word: word,
+            reading: reading,
+            meaning: meaning
+        )
+        let json = [
+            "id": id,
+            "title": "\(word)（\(reading)）",
+            "meaning": meaning
         ].compactMapValues { $0 }
         
         return (model, json)

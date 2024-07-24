@@ -14,8 +14,12 @@
 		E40040632C513EDB00EDBBF6 /* ItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40040622C513ED900EDBBF6 /* ItemService.swift */; };
 		E40040652C513EEA00EDBBF6 /* LocalVocabularyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40040642C513EE300EDBBF6 /* LocalVocabularyService.swift */; };
 		E40040682C51403E00EDBBF6 /* LocalGrammarMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40040672C51403600EDBBF6 /* LocalGrammarMapperTests.swift */; };
-		E400406A2C5140BB00EDBBF6 /* XCTestCase+GrammarHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40040692C5140B100EDBBF6 /* XCTestCase+GrammarHelpers.swift */; };
+		E400406A2C5140BB00EDBBF6 /* XCTestCase+ItemHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40040692C5140B100EDBBF6 /* XCTestCase+ItemHelpers.swift */; };
 		E400406C2C51422E00EDBBF6 /* XCTestCase+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E400406B2C51422800EDBBF6 /* XCTestCase+Helpers.swift */; };
+		E400406E2C51448F00EDBBF6 /* LocalVocabService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E400406D2C51448100EDBBF6 /* LocalVocabService.swift */; };
+		E40040702C5144AF00EDBBF6 /* Vocab.swift in Sources */ = {isa = PBXBuildFile; fileRef = E400406F2C5144AF00EDBBF6 /* Vocab.swift */; };
+		E40040722C5144F900EDBBF6 /* LocalVocabMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40040712C5144F500EDBBF6 /* LocalVocabMapper.swift */; };
+		E40040742C51470900EDBBF6 /* LocalVocabMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40040732C51470900EDBBF6 /* LocalVocabMapperTests.swift */; };
 		E406D50F2B70615A00DD9AD6 /* JLPTQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E406D5062B70615A00DD9AD6 /* JLPTQuiz.framework */; };
 		E406D5142B70615A00DD9AD6 /* LocalQuizMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D5132B70615A00DD9AD6 /* LocalQuizMapperTests.swift */; };
 		E406D5152B70615A00DD9AD6 /* JLPTQuiz.h in Headers */ = {isa = PBXBuildFile; fileRef = E406D5092B70615A00DD9AD6 /* JLPTQuiz.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -126,8 +130,12 @@
 		E40040622C513ED900EDBBF6 /* ItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemService.swift; sourceTree = "<group>"; };
 		E40040642C513EE300EDBBF6 /* LocalVocabularyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVocabularyService.swift; sourceTree = "<group>"; };
 		E40040672C51403600EDBBF6 /* LocalGrammarMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalGrammarMapperTests.swift; sourceTree = "<group>"; };
-		E40040692C5140B100EDBBF6 /* XCTestCase+GrammarHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+GrammarHelpers.swift"; sourceTree = "<group>"; };
+		E40040692C5140B100EDBBF6 /* XCTestCase+ItemHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+ItemHelpers.swift"; sourceTree = "<group>"; };
 		E400406B2C51422800EDBBF6 /* XCTestCase+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Helpers.swift"; sourceTree = "<group>"; };
+		E400406D2C51448100EDBBF6 /* LocalVocabService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVocabService.swift; sourceTree = "<group>"; };
+		E400406F2C5144AF00EDBBF6 /* Vocab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocab.swift; sourceTree = "<group>"; };
+		E40040712C5144F500EDBBF6 /* LocalVocabMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVocabMapper.swift; sourceTree = "<group>"; };
+		E40040732C51470900EDBBF6 /* LocalVocabMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVocabMapperTests.swift; sourceTree = "<group>"; };
 		E406D5062B70615A00DD9AD6 /* JLPTQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JLPTQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E406D5092B70615A00DD9AD6 /* JLPTQuiz.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLPTQuiz.h; sourceTree = "<group>"; };
 		E406D50E2B70615A00DD9AD6 /* JLPTQuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLPTQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				E40040622C513ED900EDBBF6 /* ItemService.swift */,
+				E400406D2C51448100EDBBF6 /* LocalVocabService.swift */,
+				E40040712C5144F500EDBBF6 /* LocalVocabMapper.swift */,
 				E400405E2C513C6700EDBBF6 /* LocalGrammarService.swift */,
 				E400405C2C513C5A00EDBBF6 /* LocalGrammarMapper.swift */,
 				E40040642C513EE300EDBBF6 /* LocalVocabularyService.swift */,
@@ -254,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				E40040672C51403600EDBBF6 /* LocalGrammarMapperTests.swift */,
+				E40040732C51470900EDBBF6 /* LocalVocabMapperTests.swift */,
 			);
 			path = "Item Loader";
 			sourceTree = "<group>";
@@ -334,6 +345,7 @@
 			children = (
 				E40040602C513C9B00EDBBF6 /* Item.swift */,
 				E40040582C513B7100EDBBF6 /* Grammar.swift */,
+				E400406F2C5144AF00EDBBF6 /* Vocab.swift */,
 				E406D52F2B706A8000DD9AD6 /* Quiz.swift */,
 			);
 			path = Models;
@@ -356,7 +368,7 @@
 				E45B1A6F2B7384E9001B838D /* Data */,
 				E400406B2C51422800EDBBF6 /* XCTestCase+Helpers.swift */,
 				E45B1A722B738538001B838D /* XCTestCase+QuizFeatureHelpers.swift */,
-				E40040692C5140B100EDBBF6 /* XCTestCase+GrammarHelpers.swift */,
+				E40040692C5140B100EDBBF6 /* XCTestCase+ItemHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -824,7 +836,10 @@
 				E40040612C513C9D00EDBBF6 /* Item.swift in Sources */,
 				E40040652C513EEA00EDBBF6 /* LocalVocabularyService.swift in Sources */,
 				E406D52D2B706A2100DD9AD6 /* LocalQuizMapper.swift in Sources */,
+				E40040722C5144F900EDBBF6 /* LocalVocabMapper.swift in Sources */,
 				E406D5342B708EDB00DD9AD6 /* LocalQuizService.swift in Sources */,
+				E400406E2C51448F00EDBBF6 /* LocalVocabService.swift in Sources */,
+				E40040702C5144AF00EDBBF6 /* Vocab.swift in Sources */,
 				E40040632C513EDB00EDBBF6 /* ItemService.swift in Sources */,
 				E406D5302B706A8000DD9AD6 /* Quiz.swift in Sources */,
 				E45B1A782B747EF7001B838D /* QuizFlowManager.swift in Sources */,
@@ -838,12 +853,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E40040742C51470900EDBBF6 /* LocalVocabMapperTests.swift in Sources */,
 				E45B1A752B73861A001B838D /* QuizFlowManagerTests.swift in Sources */,
 				E40040682C51403E00EDBBF6 /* LocalGrammarMapperTests.swift in Sources */,
 				E45B1A732B738538001B838D /* XCTestCase+QuizFeatureHelpers.swift in Sources */,
 				E400406C2C51422E00EDBBF6 /* XCTestCase+Helpers.swift in Sources */,
 				E45B1A7A2B747F15001B838D /* QuizFlowManagerTests+Helpers.swift in Sources */,
-				E400406A2C5140BB00EDBBF6 /* XCTestCase+GrammarHelpers.swift in Sources */,
+				E400406A2C5140BB00EDBBF6 /* XCTestCase+ItemHelpers.swift in Sources */,
 				E406D5142B70615A00DD9AD6 /* LocalQuizMapperTests.swift in Sources */,
 				E406D5372B7091F600DD9AD6 /* LocalQuizServiceIntegrationTests.swift in Sources */,
 				E406D5412B709A3500DD9AD6 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
