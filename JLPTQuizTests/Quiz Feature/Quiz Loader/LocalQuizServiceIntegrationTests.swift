@@ -26,12 +26,13 @@ final class LocalQuizServiceIntegrationTests: XCTestCase {
     
     func test_generateSession_deliversFilteredItemsWhenFiltering() {
         let sut = makeSUT()
-        let filter = QuizConfig(numberOfQuestions: 1, level: .n1, type: .grammar)
+        let filter = QuizConfig(numberOfQuestions: 2, level: .n1, type: .grammar)
         
         do {
             let session = try sut.generateSession(filteredBy: filter)
-            XCTAssertEqual(session.quizList.count, 1)
-            XCTAssertEqual(session.quizList[0], expectedItem(at: 0))
+            let sortedResult = session.quizList.sorted { $0.id < $1.id }
+            XCTAssertEqual(session.quizList.count, 2)
+            XCTAssertEqual(sortedResult[0], expectedItem(at: 0))
         } catch {
             XCTFail("Expected to load filtered quizzes, received \(error) instead")
         }
