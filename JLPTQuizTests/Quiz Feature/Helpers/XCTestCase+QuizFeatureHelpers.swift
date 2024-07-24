@@ -41,8 +41,4 @@ extension XCTestCase {
             "isAnswer": option.isAnswer
         ]
     }
-    
-    func makeItemsJSON(_ items: [[String: Any]]) -> Data {
-        return try! JSONSerialization.data(withJSONObject: items)
-    }
 }

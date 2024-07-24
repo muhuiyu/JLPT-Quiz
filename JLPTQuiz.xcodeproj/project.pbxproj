@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E40040592C513B7200EDBBF6 /* Grammar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40040582C513B7100EDBBF6 /* Grammar.swift */; };
+		E400405D2C513C6300EDBBF6 /* LocalGrammarMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E400405C2C513C5A00EDBBF6 /* LocalGrammarMapper.swift */; };
+		E400405F2C513C6E00EDBBF6 /* LocalGrammarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E400405E2C513C6700EDBBF6 /* LocalGrammarService.swift */; };
+		E40040612C513C9D00EDBBF6 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40040602C513C9B00EDBBF6 /* Item.swift */; };
+		E40040632C513EDB00EDBBF6 /* ItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40040622C513ED900EDBBF6 /* ItemService.swift */; };
+		E40040652C513EEA00EDBBF6 /* LocalVocabularyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40040642C513EE300EDBBF6 /* LocalVocabularyService.swift */; };
+		E40040682C51403E00EDBBF6 /* LocalGrammarMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40040672C51403600EDBBF6 /* LocalGrammarMapperTests.swift */; };
+		E400406A2C5140BB00EDBBF6 /* XCTestCase+GrammarHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40040692C5140B100EDBBF6 /* XCTestCase+GrammarHelpers.swift */; };
+		E400406C2C51422E00EDBBF6 /* XCTestCase+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E400406B2C51422800EDBBF6 /* XCTestCase+Helpers.swift */; };
 		E406D50F2B70615A00DD9AD6 /* JLPTQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E406D5062B70615A00DD9AD6 /* JLPTQuiz.framework */; };
 		E406D5142B70615A00DD9AD6 /* LocalQuizMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E406D5132B70615A00DD9AD6 /* LocalQuizMapperTests.swift */; };
 		E406D5152B70615A00DD9AD6 /* JLPTQuiz.h in Headers */ = {isa = PBXBuildFile; fileRef = E406D5092B70615A00DD9AD6 /* JLPTQuiz.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -66,6 +75,8 @@
 		E4843B472B90BCC9009EB890 /* EntryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4843B462B90BCC9009EB890 /* EntryDetailsViewController.swift */; };
 		E4843B492B90BD3E009EB890 /* EntryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4843B482B90BD3E009EB890 /* EntryDetailsViewModel.swift */; };
 		E4843B4B2B90C14E009EB890 /* SessionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4843B4A2B90C14E009EB890 /* SessionCoordinator.swift */; };
+		E4843B4D2B90C701009EB890 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4843B4C2B90C701009EB890 /* SpinnerView.swift */; };
+		E4843B532B90C79A009EB890 /* ExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4843B522B90C79A009EB890 /* ExplanationView.swift */; };
 		E4F9F56E2B76242300D01B61 /* QuizSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F9F56D2B76242300D01B61 /* QuizSessionViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +119,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E40040582C513B7100EDBBF6 /* Grammar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grammar.swift; sourceTree = "<group>"; };
+		E400405C2C513C5A00EDBBF6 /* LocalGrammarMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalGrammarMapper.swift; sourceTree = "<group>"; };
+		E400405E2C513C6700EDBBF6 /* LocalGrammarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalGrammarService.swift; sourceTree = "<group>"; };
+		E40040602C513C9B00EDBBF6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		E40040622C513ED900EDBBF6 /* ItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemService.swift; sourceTree = "<group>"; };
+		E40040642C513EE300EDBBF6 /* LocalVocabularyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalVocabularyService.swift; sourceTree = "<group>"; };
+		E40040672C51403600EDBBF6 /* LocalGrammarMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalGrammarMapperTests.swift; sourceTree = "<group>"; };
+		E40040692C5140B100EDBBF6 /* XCTestCase+GrammarHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+GrammarHelpers.swift"; sourceTree = "<group>"; };
+		E400406B2C51422800EDBBF6 /* XCTestCase+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Helpers.swift"; sourceTree = "<group>"; };
 		E406D5062B70615A00DD9AD6 /* JLPTQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JLPTQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E406D5092B70615A00DD9AD6 /* JLPTQuiz.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLPTQuiz.h; sourceTree = "<group>"; };
 		E406D50E2B70615A00DD9AD6 /* JLPTQuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLPTQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +188,8 @@
 		E4843B462B90BCC9009EB890 /* EntryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailsViewController.swift; sourceTree = "<group>"; };
 		E4843B482B90BD3E009EB890 /* EntryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailsViewModel.swift; sourceTree = "<group>"; };
 		E4843B4A2B90C14E009EB890 /* SessionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionCoordinator.swift; sourceTree = "<group>"; };
+		E4843B4C2B90C701009EB890 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
+		E4843B522B90C79A009EB890 /* ExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplanationView.swift; sourceTree = "<group>"; };
 		E4F9F56D2B76242300D01B61 /* QuizSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSessionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,6 +228,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E400405A2C513BD800EDBBF6 /* Item Loader */ = {
+			isa = PBXGroup;
+			children = (
+				E40040622C513ED900EDBBF6 /* ItemService.swift */,
+				E400405E2C513C6700EDBBF6 /* LocalGrammarService.swift */,
+				E400405C2C513C5A00EDBBF6 /* LocalGrammarMapper.swift */,
+				E40040642C513EE300EDBBF6 /* LocalVocabularyService.swift */,
+				E400405B2C513C5000EDBBF6 /* Data */,
+			);
+			path = "Item Loader";
+			sourceTree = "<group>";
+		};
+		E400405B2C513C5000EDBBF6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E406D5222B70665700DD9AD6 /* grammars.json */,
+				E406D5232B70665700DD9AD6 /* kanjis.json */,
+				E406D5242B70665700DD9AD6 /* vocabs.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E40040662C51402C00EDBBF6 /* Item Loader */ = {
+			isa = PBXGroup;
+			children = (
+				E40040672C51403600EDBBF6 /* LocalGrammarMapperTests.swift */,
+			);
+			path = "Item Loader";
+			sourceTree = "<group>";
+		};
 		E406D4FC2B70615900DD9AD6 = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				E406D52E2B706A6E00DD9AD6 /* Models */,
+				E400405A2C513BD800EDBBF6 /* Item Loader */,
 				E406D5292B7066AA00DD9AD6 /* Quiz Loader */,
 				E45B1A762B747EE3001B838D /* Quiz Flow */,
 			);
@@ -261,9 +314,6 @@
 			isa = PBXGroup;
 			children = (
 				E406D5202B70663600DD9AD6 /* quizzes.json */,
-				E406D5222B70665700DD9AD6 /* grammars.json */,
-				E406D5232B70665700DD9AD6 /* kanjis.json */,
-				E406D5242B70665700DD9AD6 /* vocabs.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -282,6 +332,8 @@
 		E406D52E2B706A6E00DD9AD6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E40040602C513C9B00EDBBF6 /* Item.swift */,
+				E40040582C513B7100EDBBF6 /* Grammar.swift */,
 				E406D52F2B706A8000DD9AD6 /* Quiz.swift */,
 			);
 			path = Models;
@@ -291,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				E406D5382B70945100DD9AD6 /* Helpers */,
+				E40040662C51402C00EDBBF6 /* Item Loader */,
 				E45B1A702B738507001B838D /* Quiz Flow */,
 				E45B1A6E2B7382DC001B838D /* Quiz Loader */,
 			);
@@ -301,7 +354,9 @@
 			isa = PBXGroup;
 			children = (
 				E45B1A6F2B7384E9001B838D /* Data */,
+				E400406B2C51422800EDBBF6 /* XCTestCase+Helpers.swift */,
 				E45B1A722B738538001B838D /* XCTestCase+QuizFeatureHelpers.swift */,
+				E40040692C5140B100EDBBF6 /* XCTestCase+GrammarHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -326,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				E438E4E32B78A53100F80F19 /* PrimaryTextButton.swift */,
+				E4843B4C2B90C701009EB890 /* SpinnerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -414,6 +470,7 @@
 			children = (
 				E45B1AEE2B74864E001B838D /* Shared UI Helpers */,
 				E45B1AEB2B748609001B838D /* Quiz */,
+				E4843B4E2B90C71F009EB890 /* Session */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -470,7 +527,6 @@
 		E45B1AEB2B748609001B838D /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				E45B1B0C2B76193F001B838D /* Audio */,
 				E45B1AFC2B74913E001B838D /* Views */,
 				E45B1AFD2B749142001B838D /* View Models */,
 				E45B1AFB2B749138001B838D /* View Controllers */,
@@ -508,8 +564,6 @@
 			isa = PBXGroup;
 			children = (
 				E45B1AEC2B748627001B838D /* StartQuizViewController.swift */,
-				E4843B462B90BCC9009EB890 /* EntryDetailsViewController.swift */,
-				E45B1B042B74BFF5001B838D /* QuizSessionViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -518,10 +572,6 @@
 			isa = PBXGroup;
 			children = (
 				E45B1B002B74916F001B838D /* StartQuizConfigCell.swift */,
-				E45B1B062B761818001B838D /* ProgressBarView.swift */,
-				E45B1B082B76182C001B838D /* SectionHeaderView.swift */,
-				E45B1B0A2B7618F8001B838D /* QuizSessionFooterView.swift */,
-				E45B1B112B761CE8001B838D /* OptionCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -530,8 +580,6 @@
 			isa = PBXGroup;
 			children = (
 				E45B1AFE2B749155001B838D /* StartQuizViewModel.swift */,
-				E4F9F56D2B76242300D01B61 /* QuizSessionViewModel.swift */,
-				E4843B482B90BD3E009EB890 /* EntryDetailsViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -543,6 +591,47 @@
 				E45B1B0D2B76197D001B838D /* wrong.m4a */,
 			);
 			path = Audio;
+			sourceTree = "<group>";
+		};
+		E4843B4E2B90C71F009EB890 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				E45B1B0C2B76193F001B838D /* Audio */,
+				E4843B512B90C74A009EB890 /* Views */,
+				E4843B502B90C742009EB890 /* View Models */,
+				E4843B4F2B90C73C009EB890 /* View Controllers */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		E4843B4F2B90C73C009EB890 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E45B1B042B74BFF5001B838D /* QuizSessionViewController.swift */,
+				E4843B462B90BCC9009EB890 /* EntryDetailsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E4843B502B90C742009EB890 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				E4F9F56D2B76242300D01B61 /* QuizSessionViewModel.swift */,
+				E4843B482B90BD3E009EB890 /* EntryDetailsViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		E4843B512B90C74A009EB890 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E45B1B062B761818001B838D /* ProgressBarView.swift */,
+				E45B1B082B76182C001B838D /* SectionHeaderView.swift */,
+				E45B1B0A2B7618F8001B838D /* QuizSessionFooterView.swift */,
+				E45B1B112B761CE8001B838D /* OptionCell.swift */,
+				E4843B522B90C79A009EB890 /* ExplanationView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -732,10 +821,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E406D52B2B7066B800DD9AD6 /* QuizService.swift in Sources */,
+				E40040612C513C9D00EDBBF6 /* Item.swift in Sources */,
+				E40040652C513EEA00EDBBF6 /* LocalVocabularyService.swift in Sources */,
 				E406D52D2B706A2100DD9AD6 /* LocalQuizMapper.swift in Sources */,
 				E406D5342B708EDB00DD9AD6 /* LocalQuizService.swift in Sources */,
+				E40040632C513EDB00EDBBF6 /* ItemService.swift in Sources */,
 				E406D5302B706A8000DD9AD6 /* Quiz.swift in Sources */,
 				E45B1A782B747EF7001B838D /* QuizFlowManager.swift in Sources */,
+				E40040592C513B7200EDBBF6 /* Grammar.swift in Sources */,
+				E400405D2C513C6300EDBBF6 /* LocalGrammarMapper.swift in Sources */,
+				E400405F2C513C6E00EDBBF6 /* LocalGrammarService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,8 +839,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E45B1A752B73861A001B838D /* QuizFlowManagerTests.swift in Sources */,
+				E40040682C51403E00EDBBF6 /* LocalGrammarMapperTests.swift in Sources */,
 				E45B1A732B738538001B838D /* XCTestCase+QuizFeatureHelpers.swift in Sources */,
+				E400406C2C51422E00EDBBF6 /* XCTestCase+Helpers.swift in Sources */,
 				E45B1A7A2B747F15001B838D /* QuizFlowManagerTests+Helpers.swift in Sources */,
+				E400406A2C5140BB00EDBBF6 /* XCTestCase+GrammarHelpers.swift in Sources */,
 				E406D5142B70615A00DD9AD6 /* LocalQuizMapperTests.swift in Sources */,
 				E406D5372B7091F600DD9AD6 /* LocalQuizServiceIntegrationTests.swift in Sources */,
 				E406D5412B709A3500DD9AD6 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
@@ -764,6 +862,7 @@
 				E438E4E12B788B7500F80F19 /* UIColor+Theme.swift in Sources */,
 				E45B1B012B74916F001B838D /* StartQuizConfigCell.swift in Sources */,
 				E45B1ACE2B7480CE001B838D /* AppCoordinator.swift in Sources */,
+				E4843B4D2B90C701009EB890 /* SpinnerView.swift in Sources */,
 				E45B1AFF2B749155001B838D /* StartQuizViewModel.swift in Sources */,
 				E45B1B032B74AE43001B838D /* Text+Shared.swift in Sources */,
 				E45B1AED2B748627001B838D /* StartQuizViewController.swift in Sources */,
@@ -788,6 +887,7 @@
 				E4F9F56E2B76242300D01B61 /* QuizSessionViewModel.swift in Sources */,
 				E438E4DE2B788B5B00F80F19 /* UIColor+hex.swift in Sources */,
 				E45B1AE32B7483E3001B838D /* Base.swift in Sources */,
+				E4843B532B90C79A009EB890 /* ExplanationView.swift in Sources */,
 				E45B1AFA2B748A3E001B838D /* Text+StartQuizViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

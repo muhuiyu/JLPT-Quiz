@@ -30,7 +30,11 @@ final class JLPTQuizUIComposer {
         return viewController
     }
     
-    static func makeEntryDetailsComposed(with quizService: QuizService, for id: String, as type: QuizType) -> EntryDetailsViewController {
+    static func makeEntryDetailsComposed(
+        with quizService: QuizService,
+        for id: String,
+        as type: QuizType
+    ) -> EntryDetailsViewController {
         let viewModel = EntryDetailsViewModel()
         let viewController = EntryDetailsViewController(viewModel: viewModel)
         return viewController
